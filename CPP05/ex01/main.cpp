@@ -12,7 +12,6 @@
 
 #include "Bureaucrat.hpp" //to class Bureaucrat
 #include "Form.hpp" //to class Form
-#include <memory> //to std::unique_ptr
 
 int main()
 {
