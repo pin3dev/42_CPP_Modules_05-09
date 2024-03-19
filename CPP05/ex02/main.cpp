@@ -6,7 +6,7 @@
 /*   By: pin3dev <pinedev@outlook.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 17:42:29 by pin3dev           #+#    #+#             */
-/*   Updated: 2024/03/18 11:06:41 by pin3dev          ###   ########.fr       */
+/*   Updated: 2024/03/19 21:07:03 by pin3dev          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,23 +15,6 @@
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
 
-/**
- * This is an main function to test the "AForm" concrete derived class objects (Shrubbery, Robotomy and Presidential),
- * Bureaucrat::executeForm() and AForm::execute() methods (this last one is a pure virtual method replaced by the concrete derived classes)
- * NOTE 1 - Should run several unit tests to check this object:
- * - Default Constructor;
- * - Constructor with param int;
- * - Constructor with param iterator;
- * - Copy Constructor;
- * - Copy assignment operator;
- * - Destructor (memory leaks);
- * - Calling Form with lower and higher grade than the limits;
- * - Calling executeForm with a Bureaucrat with lower and higher grade than the limits;
- * - Calling executeForm with a AForm not signed;
- * NOTE 2 - This main depends on some MACROS and ENUMS in @file mColors.hpp
- * TODO - Create a Catch2 Test that includes all the above tests
- * TODO - Test to memory leaks
-*/
 int main() 
 {
     //testing block 0: creating

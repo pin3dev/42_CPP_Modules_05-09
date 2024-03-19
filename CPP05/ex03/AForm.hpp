@@ -13,7 +13,6 @@
 #ifndef AFORM_HPP
 #define AFORM_HPP
 
-#include <cstdbool> //to bool type
 #include "Bureaucrat.hpp" //to Bureaucrat class
 #include "mColors.hpp" //to define the colors MACROS, ENUM and limits MACROS
 

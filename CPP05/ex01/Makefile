@@ -20,7 +20,7 @@ SRC = Bureaucrat.cpp Form.cpp main.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
-HEADER = Bureaucrat.hpp Form.hpp
+HEADER = Bureaucrat.hpp Form.hpp mColors.hpp
 
 all : $(NAME)
 

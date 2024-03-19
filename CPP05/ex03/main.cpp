@@ -6,7 +6,7 @@
 /*   By: pin3dev <pinedev@outlook.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 17:42:29 by pin3dev           #+#    #+#             */
-/*   Updated: 2024/03/15 12:38:00 by pin3dev          ###   ########.fr       */
+/*   Updated: 2024/03/19 21:07:19 by pin3dev          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,21 +16,6 @@
 #include "PresidentialPardonForm.hpp"
 #include "Intern.hpp"
 
-/**
- * This is an main function to test the "Intern" class objects
- * NOTE 1 - Should run several unit tests to check this object:
- * - Default Constructor;
- * - Constructor with param int;
- * - Constructor with param iterator;
- * - Copy Constructor;
- * - Copy assignment operator;
- * - Destructor (memory leaks);
- * - Calling makeForm with all the possible valid forms;
- * - Calling makeForm with an invalid form;
- * NOTE 2 - This main depends on some MACROS and ENUMS in @file mColors.hpp
- * TODO - Create a Catch2 Test that includes all the above tests
- * TODO - Test to memory leaks
-*/
 int main() 
 {
     //testing block 0: creating

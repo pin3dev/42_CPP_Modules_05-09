@@ -128,7 +128,8 @@ ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : AForm("Def_Fo
 void	ShrubberyCreationForm::execute(Bureaucrat const &executor) const
 {
 	ckBureaucraAndForm(executor);
-	std::ofstream	file(this->getTarget() + "_shrubbery");
+	std::string newfile = this->getTarget() + "_shrubbery";
+	std::ofstream	file(newfile.c_str());
 	if (!file.is_open())
 	{
 		std::cerr << RED "[Shrubbery] Error opening file " RESET << std::endl;

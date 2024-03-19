@@ -14,6 +14,7 @@
 #define ROBOOTOMYREQUESTFORM_HPP
 
 #include "AForm.hpp" //to inherit from AForm class
+#include <cstdlib> //to srand() and rand()
 
 /**
  * Classe Definition
