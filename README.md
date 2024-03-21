@@ -15,6 +15,7 @@ The `cpp_modules_05-09` projects revolves around mastering advanced C++ concepts
 - Templates Functions 
 - Templates Classes 
 - Templates Values
+- Casting Operators
 - Composition vs Inheritance  
   
 ## Guidelines
@@ -71,7 +72,10 @@ $>make
 
 ```
 ## Links2Study
-`CPP05` `CPP09` 🇧🇷📄 [SOLID Conceitos](https://www.macoratti.net/11/05/pa_solid.htm)  
-`CPP05` `CPP09` 🇧🇷📄 [OOP - Herança x Composição](https://www.macoratti.net/11/05/oop_cph1.htm)  
-`CPP05` `CPP09` 🇺🇸📄 [Composition vs Inheritance](https://www.digitalocean.com/community/tutorials/composition-vs-inheritance)  
-`CPP05` `CPP09` 🇺🇸📄 [Composition in OOPS](https://www.educba.com/composition-in-oops/)  
+|Modules|Lang & Type| Links and Subjects |
+|----------------|------|--------------------|
+|`CPP05` `CPP09` | 🇧🇷  📄 | [SOLID Conceitos](https://www.macoratti.net/11/05/pa_solid.htm)|  
+|`CPP05` `CPP09` | 🇧🇷  📄 |[OOP - Herança x Composição](https://www.macoratti.net/11/05/oop_cph1.htm)|  
+|`CPP05` `CPP09` | 🇺🇸  📄 |[Composition vs Inheritance](https://www.digitalocean.com/community/tutorials/composition-vs-inheritance)|  
+|`CPP05` `CPP09` | 🇺🇸  📄 |[Composition in OOPS](https://www.educba.com/composition-in-oops/)|  
+|`CPP06`         | 🇺🇸  📄 |[Casting Operators in C++](https://www.geeksforgeeks.org/casting-operators-in-cpp/)|  
