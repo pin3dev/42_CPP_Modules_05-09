@@ -41,12 +41,12 @@ The `cpp_modules_05-09` projects revolves around mastering advanced C++ concepts
 - `Additional files` allowed if necessary.
 
 ### Rule:
-Follow the `Orthodox Canonical Form` for classes (`Modules 02-09`), which must implement four essential member functions:
+Follow the `Orthodox Canonical Form` for classes `Modules 02-09`, which must implement four essential member functions:
 - Default constructor
 - Copy constructor
 - Copy assignment operator
 - Destructor
-- Split class code into two files: Header file (`.hpp/.h`) for class definition, and Source file (`.cpp`) for implementation
+- Split class code into two files: Header file `.hpp/.h` for class definition, and Source file `.cpp` for implementation
 
 ## Features
 
