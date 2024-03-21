@@ -16,7 +16,7 @@ The `cpp_modules_05-09` projects revolves around mastering advanced C++ concepts
 - Templates Classes 
 - Templates Values
 - Casting Operators
-- Containers (satck, list, vector, map, deque...)
+- Containers (stack, list, vector, map, deque...)
 - Composition vs Inheritance  
   
 ## Guidelines
