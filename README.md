@@ -71,5 +71,6 @@ $>make
 
 ```
 ## Links2Study
-
-
+`CPP05` `CPP09` 🇧🇷📄 [SOLID Conceitos](https://www.macoratti.net/11/05/pa_solid.htm)  
+`CPP05` `CPP09` 🇧🇷📄 [OOP - Herança x Composição](https://www.macoratti.net/11/05/oop_cph1.htm)  
+`CPP05` `CPP09` 🇺🇸📄 [What is Composition?](https://stackify.com/oop-concepts-composition/)
