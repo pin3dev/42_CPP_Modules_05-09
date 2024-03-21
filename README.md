@@ -7,6 +7,7 @@
 - [Modules Guidelines](#guidelines)
 - [Mandatory Features](#features)
 - [Execution](#execution)
+- [To Study](#Links2Study)
 
 ## Overview
 The `cpp_modules_05-09` projects revolves around mastering advanced C++ concepts such as:
@@ -69,3 +70,6 @@ Each exercise's compilation is done separately by running the Makefile within th
 $>make
 
 ```
+## Links2Study
+
+
