@@ -74,16 +74,15 @@ $>make
 ``` 
 
 ## Links2Study
-
 | Grade |Modules|Lang | Type| Links and Subjects |
 |:---------:|-------|:---:|:---:|--------------------|
 |⭐⭐|`CPP05` `CPP09` | 🇧🇷 | 📄 |[SOLID Conceitos](https://www.macoratti.net/11/05/pa_solid.htm)|  
+|⭐⭐|`CPP05` `CPP09` | 🇧🇷 | 📄 |[O que é SOLID](https://medium.com/desenvolvendo-com-paixao/o-que-%C3%A9-solid-o-guia-completo-para-voc%C3%AA-entender-os-5-princ%C3%ADpios-da-poo-2b937b3fc530)|  
 |⭐⭐|`CPP05` `CPP09` | 🇧🇷 | 📄 |[OOP - Herança x Composição](https://www.macoratti.net/11/05/oop_cph1.htm)|  
 |✅|`CPP05` `CPP09` | 🇺🇸 | 📄 |[Composition vs Inheritance](https://www.digitalocean.com/community/tutorials/composition-vs-inheritance)|  
 |🤩|`CPP05` `CPP09` | 🇺🇸 | 📄 |[Composition in OOPS](https://www.educba.com/composition-in-oops/)|  
 |🤩|`CPP06`         | 🇺🇸 | 📄 |[Casting Operators in C++](https://www.geeksforgeeks.org/casting-operators-in-cpp/)|  
 |🤩|`CPP06` `CPP09` | 🇺🇸 | 📄 |[Regex](https://www3.ntu.edu.sg/home/ehchua/programming/howto/Regexe.html)|  
-
 
 > ✅ OK | ⭐ Good | ⭐⭐ VeryGood | 🤩 Amazing | 🔖 Bookmarked2Read  
 > 📄 Blog | 💭 Chat | 📹 Video | 📚 Book
