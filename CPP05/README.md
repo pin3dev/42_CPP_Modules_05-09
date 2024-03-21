@@ -27,16 +27,16 @@ The `cpp_module_05` project revolves around the concepts of try/catch in C++.
 * Creating custom exception classes like `GradeTooHighException` and `GradeTooLowException` to handle invalid inputs.  
 * Ensuring robust error recovery with `try/catch` blocks.
 
-### Exercise 01: Form Management  
+### Exercise 01: Composition
 * Demonstrating composition by introducing the `Form` class with methods like `beSigned` and `signForm`. 
 * Handling thrown and caught exceptions to ensure seamless composition.
 
-### Exercise 02: Form Processing  
+### Exercise 02: Encapsulation
 * Implementing abstraction through a pure abstract method `execute`.
 * Creating concrete classes such as `ShrubberyCreationForm`, `RobotomyRequestForm`, and `PresidentialPardonForm`.
 * Maintaining encapsulation and adherence to abstract base class by keeping attributes private and constant.
 
-### Exercise 03: Intern Tasks  
+### Exercise 03: Polymorphism
 * Employing composition with an `Intern` class to aid in form tasks.
 * Demonstrating polymorphism by utilizing an array of pointers to internal methods and the `makeForm()` function for execution.  
 
