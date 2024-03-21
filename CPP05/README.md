@@ -23,24 +23,22 @@ The `cpp_module_05` project revolves around the concepts of try/catch in C++.
 ## Features
 
 ### Exercise 00: Exception Handling  
-* Mastering the use of `try/catch` blocks for handling errors effectively.  
-* Creating custom exceptions like `GradeTooHighException` and `GradeTooLowException` to manage invalid inputs.  
-* Ensuring smooth recovery from unexpected situations.  
+* Utilizing `try/catch` blocks for effective error management.  
+* Creating custom exception classes like `GradeTooHighException` and `GradeTooLowException` to handle invalid inputs.  
+* Ensuring robust error recovery with `try/catch` blocks.
 
 ### Exercise 01: Form Management  
-* Designing a `Form` class for bureaucrats to handle and sign forms.  
-* Ensuring proper handling of form signing and execution requirements.  
-* Testing form functionality to ensure it works as expected.  
+* Demonstrating composition by introducing the `Form` class with methods like `beSigned` and `signForm`. 
+* Handling thrown and caught exceptions to ensure seamless composition.
 
 ### Exercise 02: Form Processing  
-* Creating specialized forms such as `ShrubberyCreationForm`, `RobotomyRequestForm`, and `PresidentialPardonForm`.  
-* Implementing methods to execute forms based on bureaucrat authority and form status.  
-* Testing form execution scenarios for accuracy and reliability.  
+* Implementing abstraction through a pure abstract method `execute`.
+* Creating concrete classes such as `ShrubberyCreationForm`, `RobotomyRequestForm`, and `PresidentialPardonForm`.
+* Maintaining encapsulation and adherence to abstract base class by keeping attributes private and constant.
 
 ### Exercise 03: Intern Tasks  
-* Developing an `Intern` class to assist bureaucrats in form tasks.  
-* Implementing a `makeForm()` function to create forms based on given parameters.  
-* Testing intern functionality to ensure efficient form creation and error handling.   
+* Employing composition with an `Intern` class to aid in form tasks.
+* Demonstrating polymorphism by utilizing an array of pointers to internal methods and the `makeForm()` function for execution.  
 
 ## Compilation and Execution
 Each exercise's compilation is done separately by running the Makefile within the exercise's folder.  
