@@ -1,7 +1,5 @@
 # CPP-Modules_05-09 `100/100`
 
-
-
 ## Table of Contents
 - [Project Overview](#overview)
 - [Modules Guidelines](#guidelines)
@@ -12,10 +10,11 @@
 ## Overview
 The `cpp_modules_05-09` projects revolves around mastering advanced C++ concepts such as:
 - Exceptions
+- Regular Expressions Concept (Regex)
+- Casting Operators (static_cast, dynamic_cast, const_cast, reinterpret_cast)
 - Templates Functions 
 - Templates Classes 
 - Templates Values
-- Casting Operators
 - Containers (stack, list, vector, map, deque...)
 - Composition vs Inheritance  
   
@@ -80,3 +79,5 @@ $>make
 |`CPP05` `CPP09` | 🇺🇸  📄 |[Composition vs Inheritance](https://www.digitalocean.com/community/tutorials/composition-vs-inheritance)|  
 |`CPP05` `CPP09` | 🇺🇸  📄 |[Composition in OOPS](https://www.educba.com/composition-in-oops/)|  
 |`CPP06`         | 🇺🇸  📄 |[Casting Operators in C++](https://www.geeksforgeeks.org/casting-operators-in-cpp/)|  
+|`CPP06` `CPP09` | 🇺🇸  📄 |[Regex](https://www3.ntu.edu.sg/home/ehchua/programming/howto/Regexe.html)|  
+
