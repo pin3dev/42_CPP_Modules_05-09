@@ -16,6 +16,7 @@ The `cpp_modules_05-09` projects revolves around mastering advanced C++ concepts
 - Templates Classes 
 - Templates Values
 - Casting Operators
+- Containers (satck, list, vector, map, deque...)
 - Composition vs Inheritance  
   
 ## Guidelines
@@ -32,7 +33,7 @@ The `cpp_modules_05-09` projects revolves around mastering advanced C++ concepts
 - Functions: `*printf()`, `*alloc()`, `free()`
 - External libraries like `C++11`, `Boost`
 - Using `namespace <ns_name>` and `friend` keywords.
-- `STL`, meaning no Containers (`vector` `list` `map` and so forth) and no Algorithms (anything that requires to include the `<algorithm>` header) until Module 08-09.
+- Until you reach the Module 08: `STL`, meaning no Containers (`vector` `list` `map` and so forth) and no Algorithms (anything that requires to include the `<algorithm>` header).
 - `Memory leaks` when using `new`.
 - Function `implementations in header` files (except for function templates).
 
