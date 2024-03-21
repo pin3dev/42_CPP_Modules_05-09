@@ -15,6 +15,7 @@ The `cpp_modules_05-09` projects revolves around mastering advanced C++ concepts
 - Templates Functions 
 - Templates Classes 
 - Templates Values
+- Standard Template Library (STL)
 - Containers (stack, list, vector, map, deque...)
 - Composition vs Inheritance  
   
