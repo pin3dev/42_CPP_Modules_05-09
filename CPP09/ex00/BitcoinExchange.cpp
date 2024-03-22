@@ -19,12 +19,12 @@ BitcoinExchange& BitcoinExchange::operator=(const BitcoinExchange& src){(void)sr
 BitcoinExchange::~BitcoinExchange()
 {
     this->_INPUTfile.close();
-    //(void)_DBacess; //REMOVER ISSO QUANDO FOR APLICADO EXCHANGE MÉTODO
+    //(void)_DBacess; //EVITAR WALL ENQUANTO EXCHANGE() NÃO É FINALIZADO, COMENTAR
 }
 
 BitcoinExchange::BitcoinExchange(const std::string &INPUTpath, const BitcoinDataBase *DBacess) : _DBacess(DBacess), _INPUTfile(INPUTpath.c_str())
 {
-    Checker::ckOpenFile(this->_INPUTfile); //PODE LANÇAR EXCEÇÃO 
+    Checker::ckOpenFile(this->_INPUTfile); //throws exception
 }
 
 
@@ -51,12 +51,11 @@ void BitcoinExchange::exchange()
     {
         try
         {
-            ckFormat(line, INPUT_SEPARATOR, true); //PODE LANÇAR EXCEÇÃO MAS TERÁ TRATAMENTO
-            //std::cout << line << " OK" << std::endl; //COMENTÁR ESSA LINHA
-            //InputPair pair = makeValidPair();
+            ckFormat(line, INPUT_SEPARATOR, true); //throws exception that will be caught below
+            //std::cout << line << " OK" << std::endl; //LINHA DE VERIFICAÇÃO APENAS, DEIXAR COMENTADO
             findExchange(makeValidPair());
         }
-        catch(const std::exception& e){std::cerr << e.what();} //TRATAMENTO DE EXCEÇÃO
+        catch(const std::exception& e){std::cerr << e.what();} //exception caught
         
     }
 }
