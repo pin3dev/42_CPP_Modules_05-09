@@ -6,25 +6,12 @@
 /*   By: pin3dev <pinedev@outlook.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 14:49:58 by pin3dev           #+#    #+#             */
-/*   Updated: 2024/03/15 16:06:15 by pin3dev          ###   ########.fr       */
+/*   Updated: 2024/03/22 21:15:50 by pin3dev          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Serialize.hpp"
 
-/**
- * This is an main function to test the Serialize::serialize and Serialize::deserialize methods
- * @warning Should run several unit tests to check this method:
- * - Message of Default Constructor - should not run;
- * - Message of Copy Constructor - should not run;
- * - Message of Copy assignment operator - should not run;
- * - Message of Destructor (memory leaks) - should not run;
- * - Calling Serialize::serialize and Serialize::deserialize methods;
- * - Checking data after serialization and deserialization;
- * @see This main depends on some MACROS and ENUMS in @file mColors.hpp
- * TODO - Create a Catch2 Test that includes all the above tests
- * TODO - Test to memory leaks
-*/
 int main()
 {
 	//testing block 0: creating

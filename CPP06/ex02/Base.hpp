@@ -6,7 +6,7 @@
 /*   By: pin3dev <pinedev@outlook.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 14:51:20 by pin3dev           #+#    #+#             */
-/*   Updated: 2024/03/15 16:34:28 by pin3dev          ###   ########.fr       */
+/*   Updated: 2024/03/22 20:58:45 by pin3dev          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,9 @@
 
 #include "mColors.hpp" //to colors output
 #include <iostream> //to std::cout and std::endl
+#include <cstdlib> //to srand()
+#include <ctime>  //to time()
+#include <typeinfo> //to bad_cast
 
 /** Class Declaration
  * @class Base

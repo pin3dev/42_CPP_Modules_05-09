@@ -6,7 +6,7 @@
 /*   By: pin3dev <pinedev@outlook.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 14:49:52 by pin3dev           #+#    #+#             */
-/*   Updated: 2024/03/18 11:04:28 by pin3dev          ###   ########.fr       */
+/*   Updated: 2024/03/22 21:12:34 by pin3dev          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,13 +80,19 @@ uintptr_t Serializer::serialize(Data* ptr)
  * @param[out] raw uintptr_t is an pointer to Data
  * @return uintptr_t is an unsigned integer that can hold a pointer address to Data
  * 
+ * @warning REINTERPRET_CAST is a cast operator that converts an pointer to any other type of pointer
+ * 			and does not perform any check whter the pointer converted is of the same type or not 
+ * 
  * @note uintptr_t is a type that can hold a pointer like a long int
  * @note the typecasting of reinterpret_cast is used to convert a integer to an pointer
 */
 Data* Serializer::deserialize(uintptr_t raw)
 {
     if (raw == 0)
-        return (std::cerr << "Error" << std::endl, nullptr); //talvez esse ponteiro só exista em c++11
+    {
+		std::cerr << "Error" << std::endl;
+		return (NULL); 
+	}
 	std::cout << RED "Deserialized: " << reinterpret_cast<Data*>(raw) << RESET << std::endl;
 	return (reinterpret_cast<Data*>(raw));
 }

@@ -6,7 +6,7 @@
 /*   By: pin3dev <pinedev@outlook.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 14:51:18 by pin3dev           #+#    #+#             */
-/*   Updated: 2024/03/18 09:04:21 by pin3dev          ###   ########.fr       */
+/*   Updated: 2024/03/22 21:16:11 by pin3dev          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 #include "A.hpp"
 #include "B.hpp"
 #include "C.hpp"
-
-
 
 /**
  * @brief This is the Base class destructor
@@ -51,8 +49,6 @@ Base* generate()
 	return (new C);
 }
 
-//TODO - VERIFICAR SE EXPLICAÇÃO TA CORRETA
-
 /**
  * @brief This function is responsible for identifying one pointer to Base class
  * @param p a pointer to Base class
@@ -82,7 +78,6 @@ void	identify(Base *p)
 		std::cerr << RED "Unknown pointer" RESET << std::endl;
 }
 
-
 /**
  * @brief This function is responsible for identifying one reference to Base class
  * @param p a reference to Base class
@@ -94,6 +89,11 @@ void	identify(Base *p)
  * 
  * @warning the use of (void) is to avoid the "unused" warning by Wall Wextra Werror compilation flags,
  *   		and to enfatize that the return of the dynamic_cast is not used, but the exception is
+ * 
+ * @warning DYNAMIC_CAST is a cast operator that is manly used to perform downcasting 
+ * 			converting a pointer/reference of a base class to a derived class.
+ * 			It performes on runtime and verify the validity of the conversion, its a safety type.
+ * 			Returns a null pointer to not possible conversion on pointers, and bad_cast exception
  * 
  * @note the dynamic_cast is used to check if the reference is an instance of a inherited class of Base
  * @note the signature dynamic_cast<AnyClass&>(p) try to cast the reference to the AnyClass class
@@ -110,17 +110,17 @@ void	identify(Base &p)
 		(void)dynamic_cast<A&>(p);
 		std::cout << GREEN "A ref" RESET << std::endl;
 	}
-	catch (std::bad_cast &e) {}
+	catch (const std::bad_cast& e) {}
 	try
 	{
 		(void)dynamic_cast<B&>(p);
 		std::cout << GREEN "B ref" RESET << std::endl;
 	}
-	catch (std::bad_cast &e) {}
+	catch (const std::bad_cast& e) {}
 	try
 	{
 		(void)dynamic_cast<C&>(p);
 		std::cout << GREEN "C ref" RESET << std::endl;
 	}
-	catch (std::bad_cast &e) {}
+	catch (const std::bad_cast& e) {}
 }
