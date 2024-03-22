@@ -6,7 +6,7 @@
 /*   By: pin3dev <pinedev@outlook.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 15:01:00 by pin3dev           #+#    #+#             */
-/*   Updated: 2024/03/20 13:15:45 by pin3dev          ###   ########.fr       */
+/*   Updated: 2024/03/22 14:37:15 by pin3dev          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@
 #include <sstream> //to std::stringstream
 #include <string> //to std::string, std::getline
 #include "BitcoinExchange.hpp"
+#include "BitcoinDataBase.hpp"
 
-//TESTE DE FUNÇÃO UNITARIO 
 int main(int argc, char** argv)
 {
     if (argc != 2)
@@ -28,6 +28,18 @@ int main(int argc, char** argv)
         return 1;
     }
     std::string input = argv[1];
-    BitcoinExchange x;
-    x.exchange(input);
+    try
+    {
+        BitcoinExchange a;
+        a.exchange();
+    }
+    catch(const std::exception& e){std::cerr << e.what() << '\n';}
+    
+    try
+    {
+        BitcoinDataBase DB;
+        BitcoinExchange b(input, &DB);
+        b.exchange();
+    }
+    catch(const std::exception& e){std::cerr << e.what() << '\n';}
 } 

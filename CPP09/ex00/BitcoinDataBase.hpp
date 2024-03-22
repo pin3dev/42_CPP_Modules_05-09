@@ -1,42 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   BitcoinExchange.hpp                                :+:      :+:    :+:   */
+/*   BitcoinDataBase.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pin3dev <pinedev@outlook.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 15:00:58 by pin3dev           #+#    #+#             */
-/*   Updated: 2024/03/22 15:34:55 by pin3dev          ###   ########.fr       */
+/*   Updated: 2024/03/22 15:28:37 by pin3dev          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BITCOINEXCHANGE_HPP
-#define BITCOINEXCHANGE_HPP
+#ifndef BITCOINDATABASE_HPP
+#define BITCOINDATABASE_HPP
 
 #include "Checker.hpp" //to all libraries and Checker class
-#include "BitcoinDataBase.hpp" //to BitcoinDataBase class
 
-#define INPUT_SEPARATOR '|'
+#define DB_PATH "data.csv"
+#define DB_SEPARATOR ','
 
-class BitcoinExchange : public Checker
+class BitcoinDataBase : public Checker
 {
-    private:
-        const BitcoinDataBase *_DBacess;
-        void findExchange(ValidPair pair);
-        
     public:
         //ATRIBUTOS
-        std::ifstream _INPUTfile;
-        //ALIAS
-        //METODOS
-        void exchange();
-        //CONSTRUTORES
-        BitcoinExchange();;
-        BitcoinExchange(const BitcoinExchange& src);
-        BitcoinExchange& operator=(const BitcoinExchange& src);
-        ~BitcoinExchange();
-        
-        BitcoinExchange(const std::string &INPUTpath, const BitcoinDataBase *DBacess);
+        std::map<std::string, float> DBdata;
+        //METODOS        
+        BitcoinDataBase();;
+        BitcoinDataBase(const BitcoinDataBase& src);
+        BitcoinDataBase& operator=(const BitcoinDataBase& src);
+        ~BitcoinDataBase();
 };
 
 #endif

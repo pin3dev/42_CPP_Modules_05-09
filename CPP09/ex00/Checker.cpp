@@ -6,11 +6,44 @@
 /*   By: pin3dev <pinedev@outlook.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 15:00:56 by pin3dev           #+#    #+#             */
-/*   Updated: 2024/03/20 14:02:18 by pin3dev          ###   ########.fr       */
+/*   Updated: 2024/03/22 15:33:06 by pin3dev          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Checker.hpp"
+
+//CANONICAL FORM
+Checker::Checker() : _valid()
+{
+    _valid.day = 0;
+    _valid.month = 0;
+    _valid.year = 0;
+    _valid.ex_rate = 0;
+}
+Checker::Checker(const Checker& src){(void)src;};
+Checker& Checker::operator=(const Checker& src){(void)src; return (*this);};
+Checker::~Checker(){};
+
+//UTILS TO CHECK FUNCTIONS
+static bool IsLeapYear(int year)
+{
+    return (year % 4 == 0 && (year % 100 != 0 || year % 400 == 0));
+}
+
+static bool IsValidDate(int day, int month, int year)
+{
+    if (year < 1 || month < 1 || day < 1 || month > 12 || year > 2024)
+        return false;
+    
+    size_t mIndex = month - 1;
+    int maxDaysperM[12] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+    
+    if (month == 2 && IsLeapYear(year))
+    {
+        maxDaysperM[mIndex] = 29;
+    }
+    return (day >= 1 && day <= maxDaysperM[mIndex]);
+}
 
 std::string &Checker::clearStr(std::string& str)
 {
@@ -18,46 +51,53 @@ std::string &Checker::clearStr(std::string& str)
     return (str);
 }
 
-void Checker::ck_FileErr(std::ios& file)
+//CHECKER FUNCTIONS
+
+void Checker::ckOpenFile(std::ios& file)
 {
 	if (!file)
 		throw (std::runtime_error("Fatal Error: Cannot open the file\n"));
 }
 
+void Checker::ckFirstLine(const std::string &line, const std::string firstLine)
+{
+    if (line != firstLine) //verifica conteúdo inicial do file
+        throw (std::runtime_error("Format Error: Invalid first line instruction\n"));
+}
+
 void Checker::ckDate(std::string &line, const char separator)
 {
-    int year, month, day;
+    //int year, month, day;
     char hyphen1, hyphen2;
     size_t i_del = line.find(separator);
     std::string Cdate = line.substr(0, i_del);
     Cdate = clearStr(Cdate);
     std::istringstream ssdate(Cdate);
     
-    ssdate >> year;
+    ssdate >> _valid.year;
     ssdate >> hyphen1;
-    ssdate >> month;
+    ssdate >> _valid.month;
     ssdate >> hyphen2;
-    ssdate >> day;
+    ssdate >> _valid.day;
 
     if(ssdate.fail() || ssdate.bad() || !ssdate.eof() || hyphen1 != '-' || hyphen2 != '-')
         throw (std::runtime_error("Format Error: Invalid DATE format\n"));
-    if (year <= 0 || month <= 0 || day <= 0 || month > 12 || day > 31 || year > 2024)
+    if (!IsValidDate(_valid.day, _valid.month, _valid.year))
         throw (std::runtime_error("Value Error: Invalid value to DATE\n"));
 }
 
 void Checker::ckValue(std::string &line, const char separator, bool maxValue)
 {
-    float value;
     size_t i_del = line.find(separator);
     std::string Cvalue = line.substr(i_del + 1);
     Cvalue = clearStr(Cvalue);
     std::istringstream ssvalue(Cvalue);
 
-    ssvalue >> value;
+    ssvalue >> _valid.ex_rate;
 
     if(ssvalue.fail() || ssvalue.bad() || !ssvalue.eof())
         throw (std::runtime_error("Format Error: Invalid EXCHANGE format\n"));
-    if (value < 0 || (maxValue && value > 1000))
+    if (_valid.ex_rate < 0 || (maxValue && _valid.ex_rate > 1000))
         throw (std::runtime_error("Value Error: Invalid value to EXCHANGE\n"));
 }
 
@@ -75,26 +115,20 @@ void Checker::ckFormat(std::string line, const char separator, bool maxValue)
         throw (std::runtime_error("Format Error: Invalid INPUT format\n"));
 }
 
-
-/**
- * @deprecated These functions are not used in the final version of the program
- * static bool hasOneOrJustOne(const std::string &line, const char char2find, short int max_quantity)
+std::string Checker::formatDate()
 {
-    bool has = false;
-    if (line.find(char2find) != std::string::npos)
-        has = true;
-    if (max_quantity == 1)
-    {
-        if (line.find_first_of(char2find) != line.find_last_of(char2find))
-            has = false;
-    }
+    std::ostringstream oss;
+    oss << std::setw(4) << std::setfill('0') << _valid.year << "-"
+        << std::setw(2) << std::setfill('0') << _valid.month << "-"
+        << std::setw(2) << std::setfill('0') << _valid.day;
+    return (oss.str());
 }
-static char *hasOne(std::string &line, const char delimiter)
+
+Checker::ValidPair Checker::makeValidPair()
 {
-    if (line.find(delimiter) != std::string::npos)
-        return &line[line.find(delimiter)];
-    return NULL;
-} */
+    return (make_pair(formatDate(), _valid.ex_rate));
+}
+
 
 /**
  * @deprecated This function is not used in the final version of the program, because requires c++11

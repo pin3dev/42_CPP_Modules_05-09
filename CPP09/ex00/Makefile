@@ -6,7 +6,7 @@
 #    By: pin3dev <pinedev@outlook.com>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/22 15:01:03 by pin3dev           #+#    #+#              #
-#    Updated: 2024/03/20 13:16:10 by pin3dev          ###   ########.fr        #
+#    Updated: 2024/03/20 16:08:45 by pin3dev          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,11 +16,11 @@ CPP = c++
 
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRC =  main.cpp BitcoinExchange.cpp Checker.cpp
+SRC =  main.cpp BitcoinExchange.cpp BitcoinDataBase.cpp Checker.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
-HEADER = BitcoinExchange.hpp Checker.hpp
+HEADER = BitcoinExchange.hpp BitcoinDataBase.hpp Checker.hpp
 
 all : $(NAME)
 
