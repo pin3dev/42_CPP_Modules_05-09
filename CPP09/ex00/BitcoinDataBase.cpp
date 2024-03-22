@@ -20,14 +20,14 @@ BitcoinDataBase::~BitcoinDataBase(){};
 BitcoinDataBase::BitcoinDataBase()
 {
     std::ifstream	DBfile(DB_PATH);
-    Checker::ckOpenFile(DBfile); //PODE LANÇAR EXCEÇÃO
+    Checker::ckOpenFile(DBfile); //throws exception
     
     std::string line;
     std::getline(DBfile, line);
     Checker::ckFirstLine(line, "date,exchange_rate");
     while (std::getline(DBfile, line))
     {
-        ckFormat(line, DB_SEPARATOR, false); //PODE LANÇAR EXCEÇÃO
+        ckFormat(line, DB_SEPARATOR, false); //throws exception
         this->DBdata.insert(makeValidPair());
     }
 }
