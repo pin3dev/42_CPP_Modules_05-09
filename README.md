@@ -82,6 +82,7 @@ $>make
 |✅|`CPP05` `CPP09` | 🇺🇸 | 📄 |[Composition vs Inheritance](https://www.digitalocean.com/community/tutorials/composition-vs-inheritance)|  
 |🤩|`CPP05` `CPP09` | 🇺🇸 | 📄 |[Composition in OOPS](https://www.educba.com/composition-in-oops/)|  
 |🤩|`CPP06`         | 🇺🇸 | 📄 |[Casting Operators in C++](https://www.geeksforgeeks.org/casting-operators-in-cpp/)|  
+|⭐⭐|`CPP06`       | 🇧🇷 | 📄 |[TIPOS DE LITERAIS EM C / C++](https://acervolima.com/tipos-de-literais-em-c-c-com-exemplos/)|  
 |🤩|`CPP06` `CPP09` | 🇺🇸 | 📄 |[Regex](https://www3.ntu.edu.sg/home/ehchua/programming/howto/Regexe.html)|  
 
 > ✅ OK | ⭐ Good | ⭐⭐ VeryGood | 🤩 Amazing | 🔖 Bookmarked2Read  
