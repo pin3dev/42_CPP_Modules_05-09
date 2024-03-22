@@ -61,13 +61,12 @@ void Checker::ckOpenFile(std::ios& file)
 
 void Checker::ckFirstLine(const std::string &line, const std::string firstLine)
 {
-    if (line != firstLine) //verifica conteúdo inicial do file
+    if (line != firstLine) 
         throw (std::runtime_error("Format Error: Invalid first line instruction\n"));
 }
 
 void Checker::ckDate(std::string &line, const char separator)
 {
-    //int year, month, day;
     char hyphen1, hyphen2;
     size_t i_del = line.find(separator);
     std::string Cdate = line.substr(0, i_del);
