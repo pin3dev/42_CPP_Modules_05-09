@@ -232,7 +232,9 @@ static void printInt(const long double &data, int n)
  * @param n the float that was converted from long double to be printed
  * 
  * @warning This function calls the limitsInput() function to check if "long double data" is between the limits of "float n"
- * 
+ * @warning The expression n == std::floor(n) checks if the 'n' is equal to the largest integer that is not greater than 'n'
+ *          in other words, checks if the number is an integer
+ 
  * @note the idea of passing both (long double and float) is to compare the limits 
  *       of the 'long double data' with the limits of the 'float n' through the function limitsInput()
  * @note the data is aready transformed to 'float n' trough the static_cast called in convert() function
@@ -259,7 +261,9 @@ static void printFloat(const long double &data, float n)
  * @param n the double that was converted from long double to be printed
  * 
  * @warning This function calls the limitsInput() function to check if "long double data" is between the limits of "double n"
- * 
+ * @warning The expression n == std::floor(n) checks if the 'n' is equal to the largest integer that is not greater than 'n'
+ *          in other words, checks if the number is an integer
+ 
  * @note the idea of passing both (long double and double) is to compare the limits 
  *       of the 'long double data' with the limits of the 'double n' through the function limitsInput()
  * @note the data is aready transformed to 'double n' trough the static_cast called in convert() function
