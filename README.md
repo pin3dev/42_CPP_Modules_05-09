@@ -92,8 +92,12 @@ $>make
 |🤩|`CPP09`         | 🇺🇸 | 📹 |[Reverse Polish Notation](https://www.youtube.com/watch?v=qN8LPIcY6K4)|  
 |✅|`CPP09`         | 🇺🇸 | 📹 |[Reverse Polish Notation Using Stacks](https://www.youtube.com/watch?v=QxHRM0EQHiQ)|  
 |🤩|`CPP09`         | 🇺🇸 | 📹 |[Introduction to Reverse Polish Notation (RPN)](https://www.youtube.com/watch?v=HDwRlIc75w4)|  
+|⭐⭐|`CPP09`       | 🇺🇸 | 📚 |[On the Average Case of MergeInsertion](https://arxiv.org/pdf/1905.09656.pdf)|  
+|⭐⭐|`CPP09`       | 🇺🇸 | 📄 |[Python: Sort unsorted numbers using Merge-insertion sort](https://www.w3resource.com/python-exercises/data-structures-and-algorithms/python-search-and-sorting-exercise-39.php)|  
 
+
+https://www.w3resource.com/python-exercises/data-structures-and-algorithms/python-search-and-sorting-exercise-39.php
 
 > ✅ OK | ⭐ Good | ⭐⭐ VeryGood | 🤩 Amazing | 🔖 Bookmarked2Read  
-> 📄 Blog | 💭 Chat | 📹 Video | 📚 Book
+> 📄 Blog | 💭 Chat | 📹 Video | 📚 Book_&_ScientificPapers
 
