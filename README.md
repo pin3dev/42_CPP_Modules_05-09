@@ -91,7 +91,7 @@ $>make
 |⭐|`CPP09`         | 🇺🇸 | 📄 |[Reverse Polish Notation](https://en.wikipedia.org/wiki/Reverse_Polish_notation)|  
 |🤩|`CPP09`         | 🇺🇸 | 📹 |[Reverse Polish Notation](https://www.youtube.com/watch?v=qN8LPIcY6K4)|  
 |✅|`CPP09`         | 🇺🇸 | 📹 |[Reverse Polish Notation Using Stacks](https://www.youtube.com/watch?v=QxHRM0EQHiQ)|  
-|✅|`CPP09`         | 🇺🇸 | 📹 |[Introduction to Reverse Polish Notation (RPN)](https://www.youtube.com/watch?v=HDwRlIc75w4)|  
+|🤩|`CPP09`         | 🇺🇸 | 📹 |[Introduction to Reverse Polish Notation (RPN)](https://www.youtube.com/watch?v=HDwRlIc75w4)|  
 
 
 > ✅ OK | ⭐ Good | ⭐⭐ VeryGood | 🤩 Amazing | 🔖 Bookmarked2Read  
