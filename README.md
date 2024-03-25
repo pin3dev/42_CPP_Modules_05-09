@@ -10,6 +10,7 @@
 ## Overview
 The `cpp_modules_05-09` projects revolves around mastering advanced C++ concepts such as:
 - Exceptions (throw, try/catch)
+- Literals values
 - Regular Expressions Concept (Regex)
 - Casting Operators (static_cast, dynamic_cast, const_cast, reinterpret_cast)
 - Templates Functions 
