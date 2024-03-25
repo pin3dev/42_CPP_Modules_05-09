@@ -83,6 +83,7 @@ $>make
 |🤩|`CPP05` `CPP09` | 🇺🇸 | 📄 |[Composition in OOPS](https://www.educba.com/composition-in-oops/)|  
 |🤩|`CPP06`         | 🇺🇸 | 📄 |[Casting Operators in C++](https://www.geeksforgeeks.org/casting-operators-in-cpp/)|  
 |⭐⭐|`CPP06`       | 🇧🇷 | 📄 |[TIPOS DE LITERAIS EM C / C++](https://acervolima.com/tipos-de-literais-em-c-c-com-exemplos/)|  
+|🤩|`CPP06`         | 🇺🇸 | 📄 |[Literals In C++](https://www.geeksforgeeks.org/cpp-literals/)|  
 |🤩|`CPP06` `CPP09` | 🇺🇸 | 📄 |[Regex](https://www3.ntu.edu.sg/home/ehchua/programming/howto/Regexe.html)|  
 |⭐|`CPP09`         | 🇺🇸 | 📄 |[Polish Notation](https://en.wikipedia.org/wiki/Polish_notation)|  
 |⭐|`CPP09`         | 🇺🇸 | 📄 |[Reverse Polish Notation](https://en.wikipedia.org/wiki/Reverse_Polish_notation)|  
