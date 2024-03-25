@@ -221,7 +221,7 @@ int	AForm::getToSign() const
  * @return a copy from a int that 
  * represents the grade of the Bureaucrat required to execute the Form.
  */
-int	AForm::getToExec( void ) const
+int	AForm::getToExec() const
 {
 	return (this->_toExec);
 }
@@ -230,7 +230,7 @@ int	AForm::getToExec( void ) const
  * @return a copy from a bool that 
  * represents the status of the Form.
  */
-bool	AForm::getStatus( void ) const
+bool	AForm::getStatus() const
 {
 	return (this->_signed);
 }
