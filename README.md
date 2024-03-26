@@ -96,6 +96,8 @@ $>make
 |⭐⭐|`CPP09`       | 🇺🇸 | 📚 |[On the Average Case of MergeInsertion](https://arxiv.org/pdf/1905.09656.pdf)|  
 |⭐⭐|`CPP09`       | 🇺🇸 | 📄 |[Python: Sort unsorted numbers using Merge-insertion sort](https://www.w3resource.com/python-exercises/data-structures-and-algorithms/python-search-and-sorting-exercise-39.php)|  
 |⭐⭐|`CPP09`       | 🇺🇸 | 📄 |[Ford-Johnson merge-insertion sort](https://codereview.stackexchange.com/questions/116367/ford-johnson-merge-insertion-sort)|  
+|⭐⭐|`CPP09`       | 🇺🇸 | 📄 |[Merge Sort vs. Insertion Sort](https://www.geeksforgeeks.org/merge-sort-vs-insertion-sort/)|  
+
 
 
 > ✅ OK | ⭐ Good | ⭐⭐ VeryGood | 🤩 Amazing | 🔖 Bookmarked2Read  
