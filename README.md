@@ -79,6 +79,7 @@ $>make
 | Grade |Modules|Lang | Type| Links and Subjects |
 |:---------:|-------|:---:|:---:|--------------------|
 |⭐⭐|`CPP05` `CPP09` | 🇧🇷 | 📄 |[SOLID Conceitos](https://www.macoratti.net/11/05/pa_solid.htm)|  
+|⭐⭐|`CPP05` `CPP09`| 🇧🇷 | 📄 |[SOLID](https://www.digitalocean.com/community/conceptual-articles/s-o-l-i-d-the-first-five-principles-of-object-oriented-design-pt)|  
 |⭐⭐|`CPP05` `CPP09` | 🇧🇷 | 📄 |[O que é SOLID](https://medium.com/desenvolvendo-com-paixao/o-que-%C3%A9-solid-o-guia-completo-para-voc%C3%AA-entender-os-5-princ%C3%ADpios-da-poo-2b937b3fc530)|  
 |⭐⭐|`CPP05` `CPP09` | 🇧🇷 | 📄 |[OOP - Herança x Composição](https://www.macoratti.net/11/05/oop_cph1.htm)|  
 |✅|`CPP05` `CPP09` | 🇺🇸 | 📄 |[Composition vs Inheritance](https://www.digitalocean.com/community/tutorials/composition-vs-inheritance)|  
@@ -95,6 +96,7 @@ $>make
 |⭐⭐|`CPP09`       | 🇺🇸 | 📚 |[On the Average Case of MergeInsertion](https://arxiv.org/pdf/1905.09656.pdf)|  
 |⭐⭐|`CPP09`       | 🇺🇸 | 📄 |[Python: Sort unsorted numbers using Merge-insertion sort](https://www.w3resource.com/python-exercises/data-structures-and-algorithms/python-search-and-sorting-exercise-39.php)|  
 
+https://www.digitalocean.com/community/conceptual-articles/s-o-l-i-d-the-first-five-principles-of-object-oriented-design-pt
 > ✅ OK | ⭐ Good | ⭐⭐ VeryGood | 🤩 Amazing | 🔖 Bookmarked2Read  
 > 📄 Blog | 💭 Chat | 📹 Video | 📚 Book_&_ScientificPapers
 
