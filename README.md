@@ -95,6 +95,8 @@ $>make
 |🤩|`CPP09`         | 🇺🇸 | 📹 |[Introduction to Reverse Polish Notation (RPN)](https://www.youtube.com/watch?v=HDwRlIc75w4)|  
 |⭐⭐|`CPP09`       | 🇺🇸 | 📚 |[On the Average Case of MergeInsertion](https://arxiv.org/pdf/1905.09656.pdf)|  
 |⭐⭐|`CPP09`       | 🇺🇸 | 📄 |[Python: Sort unsorted numbers using Merge-insertion sort](https://www.w3resource.com/python-exercises/data-structures-and-algorithms/python-search-and-sorting-exercise-39.php)|  
+|⭐⭐|`CPP09`       | 🇺🇸 | 📄 |[Ford-Johnson merge-insertion sort](https://codereview.stackexchange.com/questions/116367/ford-johnson-merge-insertion-sort)|  
+
 
 > ✅ OK | ⭐ Good | ⭐⭐ VeryGood | 🤩 Amazing | 🔖 Bookmarked2Read  
 > 📄 Blog | 💭 Chat | 📹 Video | 📚 Book_&_ScientificPapers
