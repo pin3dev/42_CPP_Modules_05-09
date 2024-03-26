@@ -96,7 +96,6 @@ $>make
 |⭐⭐|`CPP09`       | 🇺🇸 | 📚 |[On the Average Case of MergeInsertion](https://arxiv.org/pdf/1905.09656.pdf)|  
 |⭐⭐|`CPP09`       | 🇺🇸 | 📄 |[Python: Sort unsorted numbers using Merge-insertion sort](https://www.w3resource.com/python-exercises/data-structures-and-algorithms/python-search-and-sorting-exercise-39.php)|  
 
-https://www.digitalocean.com/community/conceptual-articles/s-o-l-i-d-the-first-five-principles-of-object-oriented-design-pt
 > ✅ OK | ⭐ Good | ⭐⭐ VeryGood | 🤩 Amazing | 🔖 Bookmarked2Read  
 > 📄 Blog | 💭 Chat | 📹 Video | 📚 Book_&_ScientificPapers
 
