@@ -6,7 +6,7 @@
 /*   By: pin3dev <pinedev@outlook.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 14:55:54 by pin3dev           #+#    #+#             */
-/*   Updated: 2024/03/18 09:47:48 by pin3dev          ###   ########.fr       */
+/*   Updated: 2024/03/27 15:53:55 by pin3dev          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@
  * @note This behavior is optional and reflects a design choice; it is subject to modification.
  */
 template<typename T>
-Array<T>::Array() : _array(new T[0]), _size(0)
+Array<T>::Array() : _array(new T[0]()), _size(0)
 {
     //std::cout << BKGRAY "[Array] Default Constructor called" RESET << std::endl;
 }
@@ -44,7 +44,7 @@ Array<T>::Array() : _array(new T[0]), _size(0)
  * @note This behavior is mandatory.
  */
 template<typename T>
-Array<T>::Array(const Array &src) : _array(new T[src._size]), _size(src._size)
+Array<T>::Array(const Array &src) : _array(new T[src._size]()), _size(src._size)
 {
     for (unsigned int i = 0; i < this->_size; ++i)
         this->_array[i] = src._array[i];
@@ -92,6 +92,7 @@ template<typename T>
 Array<T>::~Array()
 {
     delete[] _array;
+    _array = NULL;
 	//std::cout << BKGRAY "[Shrubbery] Destructor called" RESET << std::endl;
 }
 
@@ -114,7 +115,6 @@ Array<T>::~Array()
 template<typename T>
 Array<T>::Array(unsigned int n) : _array(new T[n]()), _size(n) 
 {
-    //TODO - VERIFICAR SE O ARRAY ESTÁ SENDO INICIADO CORRETAMENTE EM C++98
     //std::cout << BKGRAY "[Array] Constructor called to array w/ size: " << n << RESET << std::endl;
 }
 
@@ -125,6 +125,13 @@ Array<T>::Array(unsigned int n) : _array(new T[n]()), _size(n)
  * @param i an unsigned int that represents the index of the array.
  * @return a reference to the element of the array at the index i.
  * @warning if the index is out of the array bounds, throws an exception.
+ * 
+ * @note This signature is valid to access the elements of the array in a unitary way,
+ *      giving the possibility to change the value of the element.
+ * 
+ * @note To avoid the change of the value of the element, is possible to create
+ *      a const version of this function by 
+ *      const T &Array<T>::operator[](unsigned int i) const
  * 
  * @note This behavior is mandatory.
  */

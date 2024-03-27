@@ -6,7 +6,7 @@
 /*   By: pin3dev <pinedev@outlook.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 14:54:50 by pin3dev           #+#    #+#             */
-/*   Updated: 2024/03/18 09:16:53 by pin3dev          ###   ########.fr       */
+/*   Updated: 2024/03/27 15:18:05 by pin3dev          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,7 @@
 #define ITER_HPP
 
 #include <iostream>
-
-//TODO - REVISAR
+#include <cctype> 
 
 /**
  * @brief Applies a function to each member of an array from the first until index + size.
@@ -23,13 +22,22 @@
  * @tparam Func The type of function to be applied.
  * @param array A pointer to an array of any type.
  * @param size The size of each member of the array, used for iteration.
- * @param function A pointer to a function to be applied to the members of the array.
+ * @param function a function to be applied to the members of the array.
+ * 
+ * @warning if the array is null or the size is 0, the function will print an error message and return.
+ * 
+ * @note in c++ a function could be treated as a type, which allows us to pass a function as a parameter to another function.
+ * 		in this case, the function passed as a parameter must have a single parameter of the same type as the array.
+ * @note in c++11 'if constexpr (std::is_invocable_v<Func, T>)' to check if the function is callable with the type T.
  */
 template<typename T, typename Func>
 void iter(T *array, size_t size, Func function)
 {
-    if (!array || !size || !function)
-		return ;
+	if (!array || size == 0)
+	{
+		std::cerr << "ERROR: Invalid array!" << std::endl;
+		return;
+	}
 	for (size_t i = 0; i < size ; i++)
 		function(array[i]);
 }

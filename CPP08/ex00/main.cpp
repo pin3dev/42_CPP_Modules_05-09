@@ -6,7 +6,7 @@
 /*   By: pin3dev <pinedev@outlook.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 14:57:00 by pin3dev           #+#    #+#             */
-/*   Updated: 2024/03/14 18:48:58 by pin3dev          ###   ########.fr       */
+/*   Updated: 2024/03/27 16:16:01 by pin3dev          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,17 +19,6 @@
 #include <vector>
 #include <deque>
 
-/**
- * This is an main function to test the "easyfind" function
- * NOTE 1 - Should run several unit tests to check this function:
- * - With a list<int> container object
- * - With a vector<int> container object
- * - With a deque<int> container object
- * - With a forward_list<int> container object
- * NOTE 2 - This main depends on some MACROS @ref BG and END in @file testUtils.hpp
- * TODO - Create a Catch2 Test that includes all the above tests
- * TODO - Test to memory leaks
-*/
 int main()
 {
     //declartion of diferents containers types to test

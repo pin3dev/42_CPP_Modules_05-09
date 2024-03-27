@@ -6,7 +6,7 @@
 /*   By: pin3dev <pinedev@outlook.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 15:01:18 by pin3dev           #+#    #+#             */
-/*   Updated: 2024/03/15 12:11:25 by pin3dev          ###   ########.fr       */
+/*   Updated: 2024/03/27 17:26:57 by pin3dev          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,9 @@ std::ostream &operator<<(std::ostream &out, const Span&obj)
         //<< "address: " << &obj << std::endl
         << ">>> Max: " << obj.getN() << std::endl
         << ">>> Remains: " << obj.getRemainsN() << std::endl;
-    for (unsigned int i = 0; i < obj.getVnumb().size(); i++)
-        out << CYAN "[" << std::setw(4) << i << "]:" RESET << obj.getContent(i) << std::endl;
+    for (unsigned int i = 0; i < obj.getVector().size(); i++)
+        out << CYAN "[" << std::setw(4) << i << "]:" << obj.getContent(i) << std::endl;
+    out <<  "----------------------" RESET << std::endl;
     return (out);
 }
 

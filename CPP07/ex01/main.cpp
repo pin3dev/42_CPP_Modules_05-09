@@ -6,21 +6,13 @@
 /*   By: pin3dev <pinedev@outlook.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 14:54:46 by pin3dev           #+#    #+#             */
-/*   Updated: 2024/03/18 11:43:12 by pin3dev          ###   ########.fr       */
+/*   Updated: 2024/03/27 15:18:10 by pin3dev          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "iter.hpp"
 
-/**
- * This is an main function to test the functions templates
- * @warning Should run several unit tests to check these functions:
- * - Generate 3 different type array
- * - Checking application of iter through all arrays types
- * TODO - Create a Catch2 Test that includes all the above tests
- * TODO - Test to memory leaks
-*/
-int main(void)
+int main()
 {
 	int _int[5] = {0, 1, 2, 3, 4}; //creating int array
 	char _char[3] = {'a', 'b', 'c'}; //creating char array

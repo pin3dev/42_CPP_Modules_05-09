@@ -6,7 +6,7 @@
 /*   By: pin3dev <pinedev@outlook.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 16:02:20 by pin3dev           #+#    #+#             */
-/*   Updated: 2024/03/14 20:05:47 by pin3dev          ###   ########.fr       */
+/*   Updated: 2024/03/27 17:41:35 by pin3dev          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@
  * @param[out] obj The MutantStack object whose values will be printed.
  * @return a reference to the output stream.
  * 
- * This Template function is optional and helps facilitate cleaner debugging tests
- * NOTE - the typename must to be replaced on c++11 by "auto" flag
+ * @note This Template function is optional and helps facilitate cleaner debugging tests
+ * @note the typename must to be replaced on c++11 by "auto" flag
  *        example: for (auto it = obj.begin(); it != obj.end(); ++it, ++i)
  */
 template <typename T>
@@ -52,8 +52,8 @@ std::ostream &operator<<(std::ostream &out, const MutantStack<T>&obj)
  * @param[out] obj The AnyContainer object whose values will be printed, could be list,vector,deque,etc..
  * @return a reference to the output stream.
  * 
- * This Template function is optional and helps facilitate cleaner debugging tests
- * NOTE - the typename must to be replaced on c++11 by "auto" flag
+ * @note This Template function is optional and helps facilitate cleaner debugging tests
+ * @note the typename must to be replaced on c++11 by "auto" flag
  *        example: for (auto it = obj.begin(); it != obj.end(); ++it, ++i)
  */
 template<typename AnyContainer>
@@ -79,7 +79,8 @@ std::ostream& printContainer(std::ostream& out, const AnyContainer& obj)
 };
 
 /** 
- * NOTE to student - These functions use the same logic to print the values, 
+ * @note These functions use the same logic to print the values, 
  * but I decided it's a good idea to implement both functions to change the 
- * output design to MutantStack from AnyContainer.
+ * output design to MutantStac
+ * k from AnyContainer.
  */

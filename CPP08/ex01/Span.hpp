@@ -6,7 +6,7 @@
 /*   By: pin3dev <pinedev@outlook.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 14:57:36 by pin3dev           #+#    #+#             */
-/*   Updated: 2024/03/14 19:54:28 by pin3dev          ###   ########.fr       */
+/*   Updated: 2024/03/27 16:37:48 by pin3dev          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@
 class Span
 {
     private:
-        std::vector<int> _Vnumb;
+        std::vector<int> _vector;
         unsigned int    _N;
         unsigned int    _remainsN;
     public:
@@ -78,7 +78,7 @@ class Span
         int getContent(unsigned int i)const;
         unsigned getN()const;
         unsigned int getRemainsN()const ;
-        std::vector<int> getVnumb()const;
+        std::vector<int> getVector()const;
         void setRemainsN();
 
         /**

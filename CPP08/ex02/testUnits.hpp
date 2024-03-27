@@ -6,7 +6,7 @@
 /*   By: pin3dev <pinedev@outlook.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 16:03:25 by pin3dev           #+#    #+#             */
-/*   Updated: 2024/03/14 20:08:03 by pin3dev          ###   ########.fr       */
+/*   Updated: 2024/03/27 17:37:40 by pin3dev          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ std::ostream& printContainer(std::ostream& out, const AnyContainer& obj);
 void	printHeader(std::string header);
 
 /**
- * NOTE to students: This inclusion is optional but essential for separating 
+ * @note This inclusion is optional but essential for separating 
  * the declaration of the function template from its implementation
 */
 #include "testUtils.tpp"

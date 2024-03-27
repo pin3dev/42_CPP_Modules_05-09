@@ -6,7 +6,7 @@
 /*   By: pin3dev <pinedev@outlook.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 14:54:34 by pin3dev           #+#    #+#             */
-/*   Updated: 2024/03/18 09:49:21 by pin3dev          ###   ########.fr       */
+/*   Updated: 2024/03/27 17:48:33 by pin3dev          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,15 @@
 #include <exception>
 #include "mColors.hpp"
 
+/**
+ * Class Declaration
+ * @class Array
+ * @brief A class that represents an array of a given type
+ * @param T The type of the array
+ * @param _array The array of type T
+ * @param _size The size of the array
+ * 
+*/
 template<typename T>
 class Array
 {
@@ -29,9 +38,6 @@ class Array
          * @brief Includes special member functions as 
          *        required by the subject guidelines of 42
          * @see subject_en.pdf for more information
-		 * @warning this class must not be instanciable by users (mandatory)
-		 * 
-		 * @note The following functions are declared private to prevent instanciation
         */
 		Array();
 		Array(const Array &src);
@@ -80,9 +86,9 @@ class Array
 		
 };
 
-/** Utils Functions (mandatory)
-* @brief Includes functions as required by the subject guidelines of 42
-* @see subject_en.pdf for more information
+/** Utils Functions (optional)
+* @brief This function is used to print the Array content in the console.
+* @note This function is optional, but it is very useful for debugging.
 */
 template<typename T>
 std::ostream &operator<<(std::ostream &out, const Array<T>&obj);

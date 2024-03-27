@@ -6,7 +6,7 @@
 /*   By: pin3dev <pinedev@outlook.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 14:57:31 by pin3dev           #+#    #+#             */
-/*   Updated: 2024/03/18 11:58:00 by pin3dev          ###   ########.fr       */
+/*   Updated: 2024/03/27 17:34:11 by pin3dev          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,6 @@
 #include "mColors.hpp" //to color MACROS
 #include "testUtils.hpp" //to support functions of unit tests
 
-/**
- * This is an main function to test the "Span" objects members functions
- * NOTE 1 - Should run several unit tests to check this object:
- * - Default Constructor;
- * - Constructor with param int;
- * - Constructor with param iterator;
- * - Copy Constructor;
- * - Copy assignment operator;
- * - Destructor (memory leaks);
- * - calling Constructor with param _N as 0 and trying addNumber;
- * - calling Constructor with param iterator to array with more than 100 integers;
- * - calling addNumber with param iterator to array with more than _remainsN;
- * - calling addNumber with param int to Span with _N set as 0
- * NOTE 2 - This main depends on some MACROS and utils functions in @file testUtils.hpp mColors.hpp
- * TODO - Create a Catch2 Test that includes all the above tests
- * TODO - Test to memory leaks
-*/
 int main()
 {
     int array[] = {10, 22, 33345, 42342, -215, -2135, -2125}; //array values inicializer
@@ -50,7 +33,7 @@ int main()
         Span Vector_00(2); //creates Vector_0 with _N=2
         Vector_00.addNumber(3); //try add a new numbers, and succed bc _RemainsN!=0
         std::cout << Vector_00; //display Vector_00 content
-        diffSpan(Vector_00); //try to find the shortest and longest, and Fail bc _Vnumb.size() < 2
+        diffSpan(Vector_00); //try to find the shortest and longest, and Fail bc _vector.size() < 2
     }
     catch(const std::exception& e){std::cerr << RED <<  e.what() << '\n' << RESET;} //prints exception message when try() fails
     try
@@ -76,7 +59,7 @@ int main()
     try
     {
         printHeader("VECTOR_2");
-        Vector_2 = Vector_1; //copy rearranged Vector_1
+        Vector_2 = Vector_1; //copy assignment rearranged Vector_1
         std::cout << Vector_2; //display Vector_2 content as copy of Vector_1
         std::vector<int>::iterator it = std::find(base.begin(), base.end(), 0); //defined iterator to 0 in base vector
         Vector_2.addNumber(it, base.end()); //try add 3 new numbers from arr[] to Vector_2 {0, -1, 892}, and Suceed bc _RemainsN!=0
@@ -87,7 +70,7 @@ int main()
     try
     {
         printHeader("VECTOR_3");
-        Span Vector_3(Vector_2); //copy Vector_2
+        Span Vector_3(Vector_2); //copy constructor of Vector_2
         Vector_3.addNumber(892); //try add a new numbers, and succed bc _RemainsN!=0
         std::cout << Vector_3; //display Vector_3 content
         diffSpan(Vector_3); //redorder Vector_1 and display results
