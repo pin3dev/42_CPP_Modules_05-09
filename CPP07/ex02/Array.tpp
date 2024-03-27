@@ -6,7 +6,7 @@
 /*   By: pin3dev <pinedev@outlook.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 14:55:54 by pin3dev           #+#    #+#             */
-/*   Updated: 2024/03/27 15:53:55 by pin3dev          ###   ########.fr       */
+/*   Updated: 2024/03/27 18:30:16 by pin3dev          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,11 @@
  * 		  The default value for the _size is 0
  * 		  Could display a message to the standard output.
  * @tparam T the type of the array
- * @warning the _array is initialized with size 0, not NULL, because it is a pointer.
+ * @warning the _array is initialized with size 0,
+ *          because the subject specifies that the array should be created empty.
+ * 
+ * @note A NULL pointer is not the same as a pointer to an array of size 0,
+ *      A pointer to an array of size 0 is a valid pointer, but it cannot be dereferenced.
  * 
  * @note This behavior is optional and reflects a design choice; it is subject to modification.
  */
@@ -138,7 +142,7 @@ Array<T>::Array(unsigned int n) : _array(new T[n]()), _size(n)
 template<typename T>
 T &Array<T>::operator[](unsigned int i)
 {
-    if (i >= this->size() || this->_array == NULL || this->_size == 0 || i < 0) 
+    if (i >= this->size() || this->_array == NULL || this->_size == 0) 
         throw (Array::OutOfBounds());
     return (this->_array[i]);
 }

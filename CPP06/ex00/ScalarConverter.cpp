@@ -6,7 +6,7 @@
 /*   By: pin3dev <pinedev@outlook.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 14:48:48 by pin3dev           #+#    #+#             */
-/*   Updated: 2024/03/22 21:43:07 by pin3dev          ###   ########.fr       */
+/*   Updated: 2024/03/22 21:04:19 by pin3dev          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -189,7 +189,7 @@ static void printError(const long double &data)
  * @warning the data could be transformed to 'char c' and dont be an characater printed 
  *          like any between 0 and 31 or 127 to this cases the function isprint() 
  *          is used to check if the character is printable
- *  
+ * 
  * @note the idea of passing both (long double and char) is to compare the limits 
  *       of the 'long double data' with the limits of the 'char c' through the function limitsInput()
  * @note the data is aready transformed to 'char c' trough the static_cast called in convert() function
@@ -236,8 +236,6 @@ static void printInt(const long double &data, int n)
  * @param n the float that was converted from long double to be printed
  * 
  * @warning This function calls the limitsInput() function to check if "long double data" is between the limits of "float n"
- * @warning The expression n == std::floor(n) checks if the 'n' is equal to the largest integer that is not greater than 'n'
- *          in other words, checks if the number is an integer
  * 
  * @note the idea of passing both (long double and float) is to compare the limits 
  *       of the 'long double data' with the limits of the 'float n' through the function limitsInput()
@@ -265,8 +263,6 @@ static void printFloat(const long double &data, float n)
  * @param n the double that was converted from long double to be printed
  * 
  * @warning This function calls the limitsInput() function to check if "long double data" is between the limits of "double n"
- * @warning The expression n == std::floor(n) checks if the 'n' is equal to the largest integer that is not greater than 'n'
- *          in other words, checks if the number is an integer
  * 
  * @note the idea of passing both (long double and double) is to compare the limits 
  *       of the 'long double data' with the limits of the 'double n' through the function limitsInput()
@@ -320,8 +316,7 @@ static void printPseudo(std::string &input)
     }
 }
 
-/**!SECTION
- * SECTION - LEXER FUNCTIONS
+/** SECTION - LEXER FUNCTIONS
  * @brief Checks if the input is a pseudo float or double, or an error
  * @param[out] input a string that represents the input to be checked
  * @return the type of the input as a _Input ENUM
