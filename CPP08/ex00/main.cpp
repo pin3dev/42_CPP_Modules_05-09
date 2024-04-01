@@ -14,7 +14,6 @@
 #include "testUtils.hpp" //to colors and others macros
 
 //[Optional]: Container types to test the "easyfind" on
-#include <forward_list>
 #include <list>
 #include <vector>
 #include <deque>

@@ -17,12 +17,13 @@
 #include <vector> //std::vector
 #include <iostream> //to std::ostream and std::cout
 #include <iomanip> //to std::setw
+#include <algorithm> //to std::sort
 
 /**
  * Classe Definition
  * @class Span
  * @brief a Class that can store a maximum of _N integers
- * @param _Vnumb std::vector<int> used to store integers
+ * @param _vector std::vector<int> used to store integers
  * @param _N unsigned int specifies the maximum capacity of _Vnumb.
  * @param _remainsN unsigned int number of available slots remaining for storing integers.
  * 

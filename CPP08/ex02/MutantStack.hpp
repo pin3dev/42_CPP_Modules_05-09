@@ -56,7 +56,7 @@ class MutantStack : public std::stack<T>
         typedef typename std::stack<T>::container_type::iterator iterator;
         typedef typename std::stack<T>::container_type::const_iterator const_iterator;
 
-		/**
+		    /**
          * Additional Member Functions
          * @brief Includes member functions as 
          *        required by the subject guidelines of 42

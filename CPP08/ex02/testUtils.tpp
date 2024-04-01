@@ -24,15 +24,15 @@
 template <typename T>
 std::ostream &operator<<(std::ostream &out, const MutantStack<T>&obj)
 {
-    typename MutantStack<T>::const_iterator it_b = obj.begin(); 
+    //typename MutantStack<T>::const_iterator it_b = obj.begin(); //that is the problem maker of my leaks
     typename MutantStack<T>::const_iterator it_e = obj.end(); 
     it_e--;
-    it_b--;
+    //it_b--; //that is the problem maker of my leaks
 
     out << CYAN "--------STACK--------" << std::endl
         << BKGRAY ">>> size: "  << obj.size() << RESET << std::endl
         << BKGRAY ">>> top: " << obj.top() << RESET << std::endl;
-    for (unsigned int i = obj.size(); it_e != it_b; --it_e, --i)
+    for (unsigned int i = obj.size(); i >= 1; --it_e, --i)
     {   
         if (i == obj.size())
             out << YELLOW "[ TOP]:" RESET << *it_e << std::endl;
