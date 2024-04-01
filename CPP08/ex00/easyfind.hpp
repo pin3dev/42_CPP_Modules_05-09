@@ -15,6 +15,7 @@
 
 #include <iostream> //to std::cout
 #include <algorithm> //to std::find, container.begin() and container.end()
+#include <iterator> //to std::distance
 
 /**
  * Template Function declaration "easyfind"
