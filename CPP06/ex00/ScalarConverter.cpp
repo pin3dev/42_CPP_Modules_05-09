@@ -235,7 +235,8 @@ static void printInt(const long double &data, int n)
  * @param[out] data a long double that represents the value of the input (scalable type) to be compared and converted/printed
  * @param n the float that was converted from long double to be printed
  * 
- * @warning This function calls the limitsInput() function to check if "long double data" is between the limits of "float n"
+ * @warning The expression n == std::floor(n) checks if the 'n' is equal to the largest integer, that is not greater than 'n'
+ *          in other words, checks if the number is an integer
  * 
  * @note the idea of passing both (long double and float) is to compare the limits 
  *       of the 'long double data' with the limits of the 'float n' through the function limitsInput()
@@ -253,7 +254,7 @@ static void printFloat(const long double &data, float n)
         else
             std::cout << n << "f" << std::endl;
     }
-    else /* if (std::isinf(static_cast<float>(n)) || std::isnan(static_cast<float>(n))) */
+    else /* if (std::isinf(n)) || std::isnan(n)) */
         std::cout << RED "Overload" RESET << std::endl;
 }
 
@@ -262,11 +263,13 @@ static void printFloat(const long double &data, float n)
  * @param[out] data a long double that represents the value of the input (scalable type) to be compared and converted/printed
  * @param n the double that was converted from long double to be printed
  * 
- * @warning This function calls the limitsInput() function to check if "long double data" is between the limits of "double n"
+ * @warning The expression n == std::floor(n) checks if the 'n' is equal to the largest integer, that is not greater than 'n'
+ *          in other words, checks if the number is an integer
  * 
  * @note the idea of passing both (long double and double) is to compare the limits 
  *       of the 'long double data' with the limits of the 'double n' through the function limitsInput()
  * @note the data is aready transformed to 'double n' trough the static_cast called in convert() function
+ *
  * @see mColors.hpp for ENUM more information
  */
 static void printDouble(const long double &data, double n)
@@ -279,7 +282,7 @@ static void printDouble(const long double &data, double n)
         else
             std::cout << n << std::endl;
     }
-    else /* if (std::isinf(static_cast<double>(n)) || std::isnan(static_cast<double>(n))) */
+    else /* if (std::isinf(n) || std::isnan(n)) */
         std::cout << RED "Overload" RESET << std::endl;
 }
 /** 
