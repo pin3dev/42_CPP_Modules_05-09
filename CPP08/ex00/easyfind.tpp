@@ -20,6 +20,9 @@
  * @warning the behavior of this function is defined by calculating the distance between the begin 
  *         of the container and the iterator returned by the find() function, or a throw exception if not found.
  * 
+ * @note the container.end() position is the immediate next position after the last element of the container
+ * @note the distance() function is a member of the <iterator> library, and could be used to calculate the distance between two iterators
+ *
  * @note the subject specifies that no associative containers will be used,
  *      so this function will not be tested with std::map, std::set, std::multimap, std::multiset, etc...
  * 
