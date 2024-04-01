@@ -20,6 +20,9 @@
  * @note This Template function is optional and helps facilitate cleaner debugging tests
  * @note the typename must to be replaced on c++11 by "auto" flag
  *        example: for (auto it = obj.begin(); it != obj.end(); ++it, ++i)
+ * @note the typename flag means that next declaration is a type, and this is important because
+ *       the compile could treat the declaration as a variable of a function, and this antecipate
+ *       the compile to treat the declaration as a type, no matter what type it is.
  */
 template <typename T>
 std::ostream &operator<<(std::ostream &out, const MutantStack<T>&obj)
@@ -55,6 +58,10 @@ std::ostream &operator<<(std::ostream &out, const MutantStack<T>&obj)
  * @note This Template function is optional and helps facilitate cleaner debugging tests
  * @note the typename must to be replaced on c++11 by "auto" flag
  *        example: for (auto it = obj.begin(); it != obj.end(); ++it, ++i)
+ *
+ * @note the typename flag means that next declaration is a type, and this is important because
+ *       the compile could treat the declaration as a variable of a function, and this antecipate
+ *       the compile to treat the declaration as a type, no matter what type it is.
  */
 template<typename AnyContainer>
 std::ostream& printContainer(std::ostream& out, const AnyContainer& obj)
