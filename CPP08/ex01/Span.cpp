@@ -114,6 +114,15 @@ Span::Span(unsigned int N) : _N(N), _remainsN(N)
  * @see utils section for more information
  * 
  * @note Filling the _vector with numerous values is mandatory, but the design approach is optional.
+ * @note the initialization of containers non-associative values could be done by several ways:
+ * 	- Initializing with the same value (e.g., 0) for all elements
+ * 	EXAMPLE: std::vector<int> vec(5, 0); //creates a vector with 5 elements, all initialized with value 0
+ * 	- Initializing with a range of values from an array
+ * 	EXAMPLE: int arr[] = {1, 2, 3, 4, 5}; std::vector<int> vec(arr, arr + 5); //creates a vector with 5 elements, initialized with values 1,2,3,4,5
+ * 	- Initializing with a range of values from another container
+ * 	EXAMPLE: std::vector<int> vec2= {1, 2, 3, 4, 5}; std::vector<int> vec(vec2.begin(), vec2.end()) //creates a vector with 5 elements, initialized with values 1,2,3,4,5 copied from vec2 vector
+ *	- Initialization with a list of values is provided, NOT AVAILABLE TO C++98
+ *	EXAMPLE: std::vector<int> vec = {1, 2, 3, 4, 5}; //creates a vector with 5 elements, initialized with values 1,2,3,4,5
  */
 Span::Span(it first, it last) 
 {
