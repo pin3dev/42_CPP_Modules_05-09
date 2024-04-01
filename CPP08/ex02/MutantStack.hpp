@@ -69,7 +69,7 @@ class MutantStack : public std::stack<T>
 };
 
 /**
- * NOTE to students: This inclusion is optional but essential for separating 
+ * @note This inclusion is optional but essential for separating 
  * the declaration of the function template from its implementation
 */
 #include "MutantStack.tpp" 
