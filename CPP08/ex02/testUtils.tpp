@@ -27,10 +27,10 @@
 template <typename T>
 std::ostream &operator<<(std::ostream &out, const MutantStack<T>&obj)
 {
-    //typename MutantStack<T>::const_iterator it_b = obj.begin(); //that is the problem maker of my leaks
+    //typename MutantStack<T>::const_iterator it_b = obj.begin(); //this is the problem maker of my leaks
     typename MutantStack<T>::const_iterator it_e = obj.end(); 
     it_e--;
-    //it_b--; //that is the problem maker of my leaks
+    //it_b--; //this is the problem maker of my leaks
 
     out << CYAN "--------STACK--------" << std::endl
         << BKGRAY ">>> size: "  << obj.size() << RESET << std::endl
