@@ -6,7 +6,7 @@
 /*   By: pin3dev <pinedev@outlook.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 15:00:58 by pin3dev           #+#    #+#             */
-/*   Updated: 2024/03/22 15:34:20 by pin3dev          ###   ########.fr       */
+/*   Updated: 2024/03/25 10:47:33 by pin3dev          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,7 @@ class Checker
         
         //ATTRIBUTES
         Stock _valid; //used by Checker 
+        const std::string _who; //used by BitcoinDataBase and BitcoinExchange
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: pin3dev <pinedev@outlook.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 15:00:56 by pin3dev           #+#    #+#             */
-/*   Updated: 2024/03/22 15:33:06 by pin3dev          ###   ########.fr       */
+/*   Updated: 2024/03/25 10:47:29 by pin3dev          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ Checker::Checker() : _valid()
 Checker::Checker(const Checker& src){(void)src;};
 Checker& Checker::operator=(const Checker& src){(void)src; return (*this);};
 Checker::~Checker(){};
+
 
 //UTILS TO CHECK FUNCTIONS
 static bool IsLeapYear(int year)
@@ -61,12 +62,13 @@ void Checker::ckOpenFile(std::ios& file)
 
 void Checker::ckFirstLine(const std::string &line, const std::string firstLine)
 {
-    if (line != firstLine) 
+    if (line != firstLine) //verifica conteúdo inicial do file
         throw (std::runtime_error("Format Error: Invalid first line instruction\n"));
 }
 
 void Checker::ckDate(std::string &line, const char separator)
 {
+    //int year, month, day;
     char hyphen1, hyphen2;
     size_t i_del = line.find(separator);
     std::string Cdate = line.substr(0, i_del);

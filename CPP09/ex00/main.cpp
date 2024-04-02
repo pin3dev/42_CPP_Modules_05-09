@@ -6,7 +6,7 @@
 /*   By: pin3dev <pinedev@outlook.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 15:01:00 by pin3dev           #+#    #+#             */
-/*   Updated: 2024/03/22 14:37:15 by pin3dev          ###   ########.fr       */
+/*   Updated: 2024/03/25 08:38:28 by pin3dev          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,13 @@ int main(int argc, char** argv)
 {
     if (argc != 2)
     {
-        std::cerr << "Usage: ./bitcoin_exchange <line>" << std::endl;
+        std::cerr << "Usage: ./btc <file>" << std::endl;
         return 1;
     }
     std::string input = argv[1];
     try
     {
+        std::cout << "---- TEST EXCHANGE WITHOUT DATABASE ----" << std::endl;
         BitcoinExchange a;
         a.exchange();
     }
@@ -37,6 +38,7 @@ int main(int argc, char** argv)
     
     try
     {
+        std::cout << "---- TEST EXCHANGE WITH DATABASE ----" << std::endl;
         BitcoinDataBase DB;
         BitcoinExchange b(input, &DB);
         b.exchange();
