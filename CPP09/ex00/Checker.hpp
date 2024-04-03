@@ -6,13 +6,14 @@
 /*   By: pin3dev <pinedev@outlook.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 15:00:58 by pin3dev           #+#    #+#             */
-/*   Updated: 2024/04/02 22:20:16 by pin3dev          ###   ########.fr       */
+/*   Updated: 2024/04/03 15:57:25 by pin3dev          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CHECKER_HPP
 #define CHECKER_HPP
 
+#include "mColors.hpp"
 #include <algorithm> //to std::find
 #include <utility> //to std::pair
 #include <iostream> //to std::cout, std::cin, std::endl

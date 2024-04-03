@@ -6,7 +6,7 @@
 /*   By: pin3dev <pinedev@outlook.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 15:01:45 by pin3dev           #+#    #+#             */
-/*   Updated: 2024/03/26 14:28:10 by pin3dev          ###   ########.fr       */
+/*   Updated: 2024/04/03 16:10:40 by pin3dev          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ static double do_op(const char type, double fst, double sec)
                 throw std::runtime_error(std::string("Invalid operator: ") + type); */
             return fst / sec;
         default: 
-            throw std::runtime_error(std::string("Invalid operator: ") + type);
+            throw std::runtime_error(std::string("Invalid operator: ") + type + "\n");
     }
 }
 
@@ -78,7 +78,7 @@ void RPN::RPN_operations(const std::string& input)
         } 
         else
         {
-            throw std::runtime_error("Invalid operator: " + token);
+            throw std::runtime_error("Invalid operator: " + token + "\n");
         }
     }
     displayRes();

@@ -6,7 +6,7 @@
 #    By: pin3dev <pinedev@outlook.com>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/22 15:01:03 by pin3dev           #+#    #+#              #
-#    Updated: 2024/03/20 16:08:45 by pin3dev          ###   ########.fr        #
+#    Updated: 2024/04/03 15:57:51 by pin3dev          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ SRC =  main.cpp BitcoinExchange.cpp BitcoinDataBase.cpp Checker.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
-HEADER = BitcoinExchange.hpp BitcoinDataBase.hpp Checker.hpp
+HEADER = BitcoinExchange.hpp BitcoinDataBase.hpp Checker.hpp mColors.hpp
 
 all : $(NAME)
 

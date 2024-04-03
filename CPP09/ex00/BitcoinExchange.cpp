@@ -6,12 +6,17 @@
 /*   By: pin3dev <pinedev@outlook.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 15:00:56 by pin3dev           #+#    #+#             */
-/*   Updated: 2024/04/03 10:58:20 by pin3dev          ###   ########.fr       */
+/*   Updated: 2024/04/03 16:49:12 by pin3dev          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "BitcoinExchange.hpp"
 
+/** 
+ * **************************
+ * SECTION - CANONICAL FORM
+ * **************************
+*/
 /**
  * Default constructor
  * @brief Initialize the BitcoinExchange object with a NULL pointer to BitcoinDataBase
@@ -39,12 +44,16 @@ BitcoinExchange& BitcoinExchange::operator=(const BitcoinExchange& src){(void)sr
  * @note if the object was created by the default constructor, the input file will not be open
  *      otherwise, the input file will be open, and have to be closed
 */
-BitcoinExchange::~BitcoinExchange()
+BitcoinExchange::~BitcoinExchange() 
 {
     if (this->_INPUTfile.is_open())
         this->_INPUTfile.close();
 }
-
+/** !SECTION 
+ * ******************************
+ * SECTION - ADDITIONAL FUNCTIONS 
+ * ******************************
+*/
 /**
  * Constructor
  * @brief Initialize the BitcoinExchange object with a path to the input file and a pointer to BitcoinDataBase
@@ -91,25 +100,38 @@ BitcoinExchange::BitcoinExchange(const std::string &INPUTpath, const BitcoinData
  *               findExchange({"2024-02-25", 2.0}) will return 2.0 * 3.0
  *               because the upper_bound of "2024-02-25" is end() 
  *               and the iterator will be decremented to "2024-02-24"
- *      TODO EXAMPLE: map = {{"2024-02-22", 1.0}, {"2024-02-23", 2.0}, {"2024-02-24", 3.0}}
- *              findExchange({"2024-02-21", 2.0}) will return 2.0 * 1.0
+ *      EXAMPLE: map = {{"2024-02-22", 1.0}, {"2024-02-23", 2.0}, {"2024-02-24", 3.0}}
+ *               findExchange({"2021-02-21", 2.0}) will return exception "Value Error: ..."
+ *               because dont have any another date lower compares with the provided
 */
 void BitcoinExchange::findExchange(ValidPair pair)
 {
     std::map<std::string, float>::const_iterator it;
     it = _DBacess->DBdata.upper_bound(pair.first);
+    if (it == _DBacess->DBdata.begin())
+        throw(std::runtime_error("Value Error: No lower date to compares to the provided input date\n"));
     --it;
     std::cout << pair.first << " => " << pair.second << " = "
     << (pair.second * it->second) << std::endl;
 }
 
-
+/**
+ * @brief Read the input file and compares doing the exchange with the database values
+ * 
+ * @warning The function could throw an exception if the database is NULzL
+ *          or if the input file is not open, and that exceptions are handled by the main function
+ *          finilizing the program
+ * @warning The function will read line by line the input file, and and after the check of format by checker class
+ *          will call the findExchange function to calculate the exchange value
+ *          so, if any exception is thrown by the checker of format, this function will catch and print the error
+ *          without stop the program, and all the other lines will be read and checked
+*/
 void BitcoinExchange::exchange()
 {
     if (_DBacess == NULL)
-        throw std::runtime_error("No database to exchange");
+        throw std::runtime_error("Fatal Error: No database file to exchange\n");
     if (!this->_INPUTfile.is_open())
-        throw std::runtime_error("No input file to exchange");
+        throw std::runtime_error("Fatal Error: No input file to exchange\n");
     std::string line;
     std::getline(this->_INPUTfile, line);
     ckFirstLine(line, "date | value");
@@ -117,13 +139,12 @@ void BitcoinExchange::exchange()
     {
         try
         {
-            ckFormat(line, INPUT_SEPARATOR, true); //PODE LANÇAR EXCEÇÃO MAS TERÁ TRATAMENTO
-            //std::cout << line << " OK" << std::endl; //COMENTÁR ESSA LINHA
-            //InputPair pair = makeValidPair();
+            ckFormat(line, INPUT_SEPARATOR, true);
+            //std::cout << line << " OK" << std::endl; //comment this line, just for debug
+            //InputPair pair = makeValidPair(); //comment this line, bc its better to call the function directly
             findExchange(makeValidPair());
         }
-        catch(const std::exception& e){std::cerr << e.what();} //TRATAMENTO DE EXCEÇÃO
-        
+        catch(const std::exception& e){std::cerr << CYAN << e.what() << RESET;}
     }
 }
 

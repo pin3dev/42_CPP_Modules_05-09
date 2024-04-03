@@ -6,7 +6,7 @@
 /*   By: pin3dev <pinedev@outlook.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 15:01:00 by pin3dev           #+#    #+#             */
-/*   Updated: 2024/04/02 23:08:25 by pin3dev          ###   ########.fr       */
+/*   Updated: 2024/04/03 16:07:23 by pin3dev          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,17 +24,17 @@ int main(int argc, char** argv)
     BitcoinDataBase DB;
     try
     {
-        std::cout << "---- TEST EXCHANGE WITHOUT DATABASE ----" << std::endl;
+        std::cout << MAGENTA << "---- TEST EXCHANGE WITHOUT DATABASE ----" << RESET << std::endl;
         BitcoinExchange a;
         a.exchange();
     }
-    catch(const std::exception& e){std::cerr << e.what() << '\n';}
+    catch(const std::exception& e){std::cerr << RED << e.what() << RESET;}
     
     try
     {
-        std::cout << "---- TEST EXCHANGE WITH DATABASE ----" << std::endl;
+        std::cout << MAGENTA << "---- TEST EXCHANGE WITH DATABASE ----" << RESET << std::endl;
         BitcoinExchange b(input, &DB);
         b.exchange();
     }
-    catch(const std::exception& e){std::cerr << e.what() << '\n';}
+    catch(const std::exception& e){std::cerr << RED << e.what() << RESET;}
 } 
