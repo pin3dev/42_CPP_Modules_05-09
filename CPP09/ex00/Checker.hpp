@@ -6,7 +6,7 @@
 /*   By: pin3dev <pinedev@outlook.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 15:00:58 by pin3dev           #+#    #+#             */
-/*   Updated: 2024/04/04 09:58:21 by pin3dev          ###   ########.fr       */
+/*   Updated: 2024/04/04 16:42:08 by pin3dev          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 #include <utility> //to std::pair
 #include <iostream> //to std::cout, std::cin, std::endl
 #include <iomanip> //to std::setw, std::setfill
-#include <exception> //to exception class
+#include <stdexcept> //to throw exceptions, std::runtime_error
 #include <fstream> //to std::ifstream, std::ofstream, etc
 #include <sstream> //to std::stringstream
 #include <string> //to std::string, std::getline

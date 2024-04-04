@@ -1,33 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   mColors.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pin3dev <pinedev@outlook.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/22 15:01:40 by pin3dev           #+#    #+#             */
-/*   Updated: 2024/04/04 16:34:13 by pin3dev          ###   ########.fr       */
+/*   Created: 2024/03/14 21:55:41 by pin3dev           #+#    #+#             */
+/*   Updated: 2024/04/03 15:56:14 by pin3dev          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "RPN.hpp"
+# ifndef MCOLORS_HPP
+# define MCOLORS_HPP
 
-int main(int argc, char** argv)
-{
-    if (argc != 2)
-    {
-        std::cout << RED "Error" RESET << std::endl;
-        return 1;
-    }
-    try
-    {
-        std::string input(argv[1]);
-        RPN::RPN_operations(input);
-    }
-    catch (std::exception& e)
-    {
-        std::cout << RED << e.what() << RESET;
-        return 1;
-    }
-    return 0;
-}
+/**
+ * @file mColors.hpp
+ * @brief definition of MACROS to color the output of the program and ENUMS to check the grade
+*/
+
+
+#define RESET    "\x1b[0m"
+#define GREEN   "\x1b[32m"
+#define YELLOW  "\x1b[33m"
+#define RED    "\x1b[31m"
+#define GRAY  "\x1b[37m"
+#define MAGENTA "\x1b[35m"
+#define BKGRAY	"\x1b[47;90m"
+#define CYAN    "\x1b[36m"
+
+# endif
