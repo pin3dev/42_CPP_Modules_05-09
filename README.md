@@ -54,7 +54,7 @@ Follow the `Orthodox Canonical Form` for classes `Modules 02-09`, which must imp
 
 ## Features
 
-### Module 05: Exception Handling and Object-Oriented Design
+### [Module 05](https://github.com/pin3dev/42_CPP_Modules_05-09/tree/main/CPP05): Exception Handling and Object-Oriented Design
 
 
 ## Execution
