@@ -6,7 +6,7 @@
 /*   By: pin3dev <pinedev@outlook.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 15:00:58 by pin3dev           #+#    #+#             */
-/*   Updated: 2024/04/03 15:57:25 by pin3dev          ###   ########.fr       */
+/*   Updated: 2024/04/04 09:58:21 by pin3dev          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,11 @@
 #include <string> //to std::string, std::getline
 #include <map> //to std::map
 
+/**
+ * Struct Definition
+ * @struct Stock
+ * @brief A struct to store the valid data related to date-exchange content of the file
+*/
 struct Stock
 {
     int day;
@@ -32,32 +37,63 @@ struct Stock
     float ex_rate;
 };
 
+/**
+ * Class Definition
+ * @class Checker
+ * @brief Checker class to check the content and availability any file passed as argument
+ * @param _valid a Stock struct to store the valid data related to date-exchange content of the file
+ * @throws std::runtime_error if the file is not available or the content is not valid
+ * 
+ * More details about the class
+*/
 class Checker
 {
     private:
-        bool IsLeapYear(int year);
-        bool IsValidDate(int day, int month, int year);
-        void ckDate(std::string &line, const char separator); //used by ckFormat
-        void ckValue(std::string &line, const char separator, bool maxValue); //used by ckFormat
-        std::string &clearStr(std::string &str); //used by ckDate and ckValue
-        std::string formatDate(); //used by BitcoinDataBase and BitcoinExchange
+        /**
+         * Utils Members Functions
+         * @brief Functions help to implement the logic of the Checker class
+        */
+        bool IsLeapYear(int year); // used by IsValidDate()
+        bool IsValidDate(int day, int month, int year); //used by ckDate()
+        void ckDate(std::string &line, const char separator); //used by ckFormat()
+        void ckValue(std::string &line, const char separator, bool maxValue); //used by ckFormat()
+        std::string &clearStr(std::string &str); //used by ckDate and ckValue()
+        std::string formatDate(); //used by MakeValidPair()
 
     protected:
+        /**
+         * @typedef ValidPair
+         * @brief Defines an alias for a pair of string and float.
+         * 
+         * Simplifies subsequent references to this data type.
+         */
         typedef std::pair<std::string, float> ValidPair;
-        //CANONNICAL FORM
+        //TODO - VERIFICAR O USO DO CONSTRUCTOR NO PROTECTED
+        /**
+         * Canonical Form
+         * @brief Includes special member functions as 
+         *        required by the subject guidelines of 42
+         * @see subject_en.pdf for more information
+        */
         Checker();
         Checker(const Checker& src);
         Checker& operator=(const Checker& src);
         ~Checker();
         
-        //METHODS
+        /**
+         * Additional Member Functions
+         * @brief Includes member functions to implement the SOLID logic
+        */
         void ckFirstLine(const std::string &line, const std::string firstLine); //used by BitcoinDataBase constructor 
         void ckFormat(std::string line, const char separator, bool maxValue); //used by BitcoinDataBase and BitcoinExchange
         void ckOpenFile(std::ios& file); //used by BitcoinDataBase and BitcoinExchange
         ValidPair makeValidPair(); //used by BitcoinDataBase and BitcoinExchange
         
-        //ATTRIBUTES
-        Stock _valid; //used by Checker 
+        /**
+         * @struct Stock
+         * @brief A struct to store the valid data related to date-exchange content of the file
+        */
+        Stock _valid;
 };
 
 #endif
