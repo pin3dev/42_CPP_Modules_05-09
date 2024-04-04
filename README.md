@@ -56,16 +56,6 @@ Follow the `Orthodox Canonical Form` for classes `Modules 02-09`, which must imp
 
 ### Module 05: Exception Handling and Object-Oriented Design
 
-- Implementing `try/catch` blocks for error handling in C++.
-- Custom exception classes creation for handling specific errors.
-- Ensuring robust error recovery with `try/catch` blocks.
-- Designing classes and methods following principles of composition.
-- Utilizing encapsulation and visibility concepts (public, private).
-- Employing abstraction through pure abstract methods.
-- Creating concrete classes with specific functionalities.
-- Maintaining encapsulation and adherence to abstract base class.
-- Demonstrating polymorphism through the use of pointers to internal methods.
-- Applying object-oriented design principles in C++ programming.
 
 ## Execution
 Each exercise's compilation is done separately by running the Makefile within the exercise's folder.  
