@@ -93,7 +93,7 @@ BitcoinExchange::BitcoinExchange(const std::string &INPUTpath, const BitcoinData
  *       so, to get the element before the key, the function will decrement the iterator
  *       and this method is enough to all cases, because the map is ordered by the date
  *       EXAMPLE: map = {{"2024-02-22", 1.0}, {"2024-02-23", 2.0}, {"2024-02-24", 3.0}}
- *                findExchange({"2024-02-23", 2.0}) will return 2.0 * 1.0
+ *                findExchange({"2024-02-23", 2.0}) will return 2.0 * 2.0
  *                because the upper_bound of "2024-02-23" is "2024-02-24"
  *                and the iterator will be decremented to "2024-02-23"
  *      EXAMPLE: map = {{"2024-02-22", 1.0}, {"2024-02-23", 2.0}, {"2024-02-24", 3.0}}
