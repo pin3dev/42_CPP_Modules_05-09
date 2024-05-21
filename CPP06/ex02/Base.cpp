@@ -109,17 +109,17 @@ void	identify(Base &p)
 		(void)dynamic_cast<A&>(p);
 		std::cout << GREEN "A ref" RESET << std::endl;
 	}
-	catch (const std::bad_cast& e) {}
+	catch (const std::exception& e) {}
 	try
 	{
 		(void)dynamic_cast<B&>(p);
 		std::cout << GREEN "B ref" RESET << std::endl;
 	}
-	catch (const std::bad_cast& e) {}
+	catch (const std::exception& e) {}
 	try
 	{
 		(void)dynamic_cast<C&>(p);
 		std::cout << GREEN "C ref" RESET << std::endl;
 	}
-	catch (const std::bad_cast& e) {}
+	catch (const std::exception& e) {}
 }
