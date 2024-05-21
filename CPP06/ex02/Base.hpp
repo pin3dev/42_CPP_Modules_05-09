@@ -17,7 +17,6 @@
 #include <iostream> //to std::cout and std::endl
 #include <cstdlib> //to srand()
 #include <ctime>  //to time()
-#include <typeinfo> //to bad_cast
 
 /** Class Declaration
  * @class Base
