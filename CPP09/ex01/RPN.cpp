@@ -6,7 +6,7 @@
 /*   By: pin3dev <pinedev@outlook.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 15:01:45 by pin3dev           #+#    #+#             */
-/*   Updated: 2024/04/04 16:29:01 by pin3dev          ###   ########.fr       */
+/*   Updated: 2024/05/28 15:59:25 by pin3dev          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -126,6 +126,8 @@ void RPN::RPN_operations(const std::string& input)
 token RPN::tokenType(std::string &token)
 {
     if (token.length() == 1 && isdigit(token[0]))
+        return (NUM);
+    if (token.length() == 2 && isdigit(token[1]) && token[0] == '-')
         return (NUM);
     else if (token.length() == 1 && token.find_first_not_of("-+/*") == std::string::npos)
         return (OP);

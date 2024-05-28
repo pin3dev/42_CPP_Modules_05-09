@@ -6,7 +6,7 @@
 /*   By: pin3dev <pinedev@outlook.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 15:01:40 by pin3dev           #+#    #+#             */
-/*   Updated: 2024/04/04 16:34:13 by pin3dev          ###   ########.fr       */
+/*   Updated: 2024/05/28 13:23:28 by pin3dev          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int main(int argc, char** argv)
 {
     if (argc != 2)
     {
-        std::cout << RED "Error" RESET << std::endl;
+        std::cout << RED "Usage: ./RPN <RPNexpression>" RESET << std::endl;
         return 1;
     }
     try

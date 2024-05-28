@@ -6,7 +6,7 @@
 /*   By: pin3dev <pinedev@outlook.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 15:02:29 by pin3dev           #+#    #+#             */
-/*   Updated: 2024/03/26 17:29:24 by pin3dev          ###   ########.fr       */
+/*   Updated: 2024/05/28 16:10:26 by pin3dev          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	main(int argc, char **argv)
 		}
 	}
 
-	PmergeMe	numbers(argv, argc);
+	PmergeMe	numbers(argv, argc);//inicia o vector e o deque com os numeros
 
 	numbers.sorting();
 	return(0);

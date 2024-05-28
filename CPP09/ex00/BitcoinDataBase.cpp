@@ -6,7 +6,7 @@
 /*   By: pin3dev <pinedev@outlook.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 15:00:56 by pin3dev           #+#    #+#             */
-/*   Updated: 2024/04/03 16:37:09 by pin3dev          ###   ########.fr       */
+/*   Updated: 2024/05/28 13:19:33 by pin3dev          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,8 @@ BitcoinDataBase::BitcoinDataBase()
     Checker::ckFirstLine(line, "date,exchange_rate"); //could throw exception
     while (std::getline(DBfile, line))
     {
-        ckFormat(line, DB_SEPARATOR, false); //could throw exception
-        this->DBdata.insert(makeValidPair());
+        Checker::ckFormat(line, DB_SEPARATOR, false); //could throw exception
+        this->DBdata.insert(Checker::makeValidPair());
     }
 }
 /**

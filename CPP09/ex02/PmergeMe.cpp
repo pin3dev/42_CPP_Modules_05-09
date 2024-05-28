@@ -6,7 +6,7 @@
 /*   By: pin3dev <pinedev@outlook.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 15:02:35 by pin3dev           #+#    #+#             */
-/*   Updated: 2024/03/27 08:09:31 by pin3dev          ###   ########.fr       */
+/*   Updated: 2024/05/28 16:14:42 by pin3dev          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,23 +46,31 @@ PmergeMe::PmergeMe(char **numbers, int numberCount)
 void	PmergeMe::sorting()
 {
 	std::cout << "Before: ";
+	//imprime o vector desordenado
 	for(size_t i = 0; i < _vec.size(); i++)
 	{
 		std::cout << _vec[i];
 		if(i != _vec.size() - 1)
 			std::cout << " ";
-	}
+	} 
 	std::cout << std::endl;
 
+	//atualiza o timestamp do inicio da operacao no vetor
 	clock_t startVec = clock();
+	//aplica o algoritmo ao vetor
 	mergeInsertVector(_vec);
+	//atualiza o timestamp do fim da operacao no vetor
 	clock_t endVec = clock();
 
+	//atualiza o timestamp do inicio da operacao no deque
 	clock_t startDeq = clock();
+	//aplica o algoritmo ao deque
 	mergeInsertDeque(_deq);
+	//atualiza o timestamp do fim da operacao no deque
 	clock_t endDeq = clock();
 
 	std::cout << "After: ";
+	//imprime o vector ordenado
 	for(size_t i = 0; i < _vec.size(); i++)
 	{
 		std::cout << _vec[i];
@@ -71,8 +79,10 @@ void	PmergeMe::sorting()
 	}
 	std::cout << std::endl;
 
+	//calcula o tempo de execucao para vector e imprime
 	double time_elapsedVec = static_cast<double>(endVec - startVec) / CLOCKS_PER_SEC;
 	std::cout << "Time to process a range of " << _vec.size() << " elements with std::vector : " << time_elapsedVec << " s" << std::endl;
+	//calcula o tempo de execucao para deque e imprime
 	double time_elapsedDeq = static_cast<double>(endDeq - startDeq) / CLOCKS_PER_SEC;
 	std::cout << "Time to process a range of " << _deq.size() << " elements with std::deque : " << time_elapsedDeq << " s" << std::endl;
 }
