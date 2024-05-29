@@ -4,6 +4,7 @@
 #include <algorithm>
 #include <cmath>
 #include <fstream>
+#include <iomanip>
 
 typedef std::pair<int, int> Pair;
 static     std::ofstream mylogfile;

@@ -6,7 +6,7 @@
 /*   By: pin3dev <pinedev@outlook.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 15:02:37 by pin3dev           #+#    #+#             */
-/*   Updated: 2024/05/29 01:18:02 by pin3dev          ###   ########.fr       */
+/*   Updated: 2024/05/29 11:19:28 by pin3dev          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@
 #include <algorithm>
 #include <cmath>
 #include <fstream>
+#include <iomanip>
+
 
 class Logger
 {

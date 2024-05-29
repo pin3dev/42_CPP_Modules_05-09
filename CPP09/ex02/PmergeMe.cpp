@@ -6,7 +6,7 @@
 /*   By: pin3dev <pinedev@outlook.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 15:02:35 by pin3dev           #+#    #+#             */
-/*   Updated: 2024/05/29 01:28:30 by pin3dev          ###   ########.fr       */
+/*   Updated: 2024/05/29 12:55:30 by pin3dev          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,12 @@ void PmergeMe::_binarySearchInsertVEC(std::vector<int>& main_chain, int b)
 {
     int left = 0;
     int right = main_chain.size();
-	this->_log->printMsg("---------BINARY INSERTION---------\n");
+	this->_log->printMsg("\n---------BINARY INSERTION---------\n");
+	std::ostringstream oss;
+	oss << "B: " << b << std::endl;
+	std::string msg = oss.str();
+	this->_log->printMsg(msg);
+
     this->_log->printArray(main_chain);
 	this->_log->printBinary(main_chain, left, right);
     while (left < right)
@@ -49,40 +54,45 @@ void PmergeMe::_binarySearchInsertVEC(std::vector<int>& main_chain, int b)
 			this->_log->printBinary(main_chain, left, right);
 		}
     }
-	std::string msg = "PUSHING TO MAIN CHAIN [ " + std::to_string(left) + " ] = " + std::to_string(b) + "\n";
+	
+	oss << "PUSHING TO MAIN CHAIN [ "<< left << " ] = " << b << "\n";
+	msg = oss.str();
 	this->_log->printMsg(msg);
     main_chain.insert(main_chain.begin() + left, b);
 }
 
-void PmergeMe::algorithmFordJohnsonVEC()
+void PmergeMe::_algorithmFordJohnsonVEC()
 {
     std::vector<PmergeMe::intPair> pairs;
     
 	int size = this->_vec.size();
 
 	for (int i = 0; i < (size - 1); i += 2)
-        pairs.push_back(std::make_pair(std::min(this->_vec[i], this->_vec[i+1]), std::max(this->_vec[i], this->_vec[i+1])));
+        pairs.push_back(std::make_pair(this->_vec[i], this->_vec[i+1]));
     
     if (size % 2 != 0)
         pairs.push_back(std::make_pair(this->_vec[size - 1], this->_vec[size - 1]));
 
     this->_log->printMsg("------PARES DESORDENADOS------\n");
     this->_log->printPair(pairs);
+	
+	std::vector<int> main_chain;
     
-	std::sort(pairs.begin(), pairs.end());
-    
-	this->_log->printMsg("---------PARES ORDENADOS---------\n");
-    this->_log->printPair(pairs);
-    std::vector<int> main_chain;
-    for (size_t i = 0; i < pairs.size(); ++i)
-        main_chain.push_back(pairs[i].first);
+	size = pairs.size();
+	for (int i = 0; i < (size - 1); i++)
+        main_chain.push_back(std::min(pairs[i].first, pairs[i].second));
 
-    this->_log->printMsg("---------MAIN CHAIN---------\n");
+    this->_log->printMsg("---------MAIN CHAIN DESORDENADO---------\n");
+    this->_log->printArray(main_chain);  
+
+	std::sort(main_chain.begin(), main_chain.end());
+
+    this->_log->printMsg("---------MAIN CHAIN ORDENADO---------\n");
     this->_log->printArray(main_chain);
 
     for (size_t i = 0; i < pairs.size(); ++i)
     {
-	    _binarySearchInsertVEC(main_chain, pairs[i].second);
+	    _binarySearchInsertVEC(main_chain, std::max(pairs[i].first, pairs[i].second));
     	this->_log->printMsg("---------MAIN CHAIN---------\n");
     	this->_log->printArray(main_chain);
 	}
@@ -90,7 +100,7 @@ void PmergeMe::algorithmFordJohnsonVEC()
     this->_vec = main_chain;
 }
 
-void binarySearchInsertDEQ(std::deque<int>& main_chain, int b)
+void PmergeMe::_binarySearchInsertDEQ(std::deque<int>& main_chain, int b)
 {
     int left = 0;
     int right = main_chain.size();
@@ -105,7 +115,7 @@ void binarySearchInsertDEQ(std::deque<int>& main_chain, int b)
     main_chain.insert(main_chain.begin() + left, b);
 }
 
-void PmergeMe::algorithmFordJohnsonDEQ()
+void PmergeMe::_algorithmFordJohnsonDEQ()
 {
     std::deque<PmergeMe::intPair> pairs;
     
@@ -124,7 +134,7 @@ void PmergeMe::algorithmFordJohnsonDEQ()
         main_chain.push_back(pairs[i].first);
 
     for (size_t i = 0; i < pairs.size(); ++i)
-        binarySearchInsertDEQ(main_chain, pairs[i].second);
+        _binarySearchInsertDEQ(main_chain, pairs[i].second);
 
     this->_deq = main_chain;
 }
@@ -134,11 +144,11 @@ void	PmergeMe::runMergeInsertion()
 	printContainer(RED "Before: " RESET, this->_vec);
 
 	clock_t initVEC = clock();
-	algorithmFordJohnsonVEC();
+	_algorithmFordJohnsonVEC();
 	clock_t endVEC = clock();
 	
 	clock_t initDEQ = clock();
-	algorithmFordJohnsonDEQ();
+	_algorithmFordJohnsonDEQ();
 	clock_t endDEQ = clock();
 
 	printContainer(GREEN "After: " RESET, this->_vec);

@@ -6,7 +6,7 @@
 /*   By: pin3dev <pinedev@outlook.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 15:02:37 by pin3dev           #+#    #+#             */
-/*   Updated: 2024/05/29 01:25:25 by pin3dev          ###   ########.fr       */
+/*   Updated: 2024/05/29 11:25:22 by pin3dev          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 #include <limits.h> //to use INT_MAX and INT_MIN
 #include <vector> //to use vector
 #include <deque> //to use deque
+#include <sstream>
 #include <cstdlib> 
 #include <time.h> //to use clock()
 #include <utility> //to use pair
@@ -37,8 +38,9 @@ class PmergeMe
 		void	_fillContainers(int av, char **ac);
 
 		void	_binarySearchInsertVEC(std::vector<int>& main_chain, int b);
-		void   algorithmFordJohnsonVEC();
-		void   algorithmFordJohnsonDEQ();
+		void 	_binarySearchInsertDEQ(std::deque<int>& main_chain, int b);
+		void  	_algorithmFordJohnsonVEC();
+		void  	_algorithmFordJohnsonDEQ();
 
 	public:
 		PmergeMe();
