@@ -6,7 +6,7 @@
 /*   By: pin3dev <pinedev@outlook.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 15:00:56 by pin3dev           #+#    #+#             */
-/*   Updated: 2024/05/28 13:20:02 by pin3dev          ###   ########.fr       */
+/*   Updated: 2024/05/29 19:29:22 by pin3dev          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -140,9 +140,7 @@ void BitcoinExchange::exchange()
         try
         {
             Checker::ckFormat(line, INPUT_SEPARATOR, true);
-            //std::cout << line << " OK" << std::endl; //comment this line, just for debug
-            //InputPair pair = makeValidPair(); //comment this line, bc its better to call the function directly
-            this->findExchange(makeValidPair());
+            this->findExchange(Checker::makeValidPair());
         }
         catch(const std::exception& e){std::cerr << CYAN << e.what() << RESET;}
     }

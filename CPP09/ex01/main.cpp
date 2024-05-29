@@ -6,7 +6,7 @@
 /*   By: pin3dev <pinedev@outlook.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 15:01:40 by pin3dev           #+#    #+#             */
-/*   Updated: 2024/05/28 13:23:28 by pin3dev          ###   ########.fr       */
+/*   Updated: 2024/05/29 19:34:28 by pin3dev          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ int main(int argc, char** argv)
     catch (std::exception& e)
     {
         std::cout << RED << e.what() << RESET;
-        return 1;
     }
     return 0;
 }

@@ -6,7 +6,7 @@
 /*   By: pin3dev <pinedev@outlook.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 15:02:37 by pin3dev           #+#    #+#             */
-/*   Updated: 2024/05/29 11:19:28 by pin3dev          ###   ########.fr       */
+/*   Updated: 2024/05/29 17:41:14 by pin3dev          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 #include <cmath>
 #include <fstream>
 #include <iomanip>
+#include <sstream>
 
 
 class Logger
@@ -38,6 +39,8 @@ class Logger
 		void printBinary(const std::vector<int>& arr, int left, int right);
 		void printPair(const std::vector<intPair>& pair);
 		void printMsg(const std::string& msg);
+		void printOss(std::ostringstream oss);
+
 };
 
 # endif

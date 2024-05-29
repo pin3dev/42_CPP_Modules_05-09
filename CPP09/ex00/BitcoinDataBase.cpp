@@ -6,7 +6,7 @@
 /*   By: pin3dev <pinedev@outlook.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 15:00:56 by pin3dev           #+#    #+#             */
-/*   Updated: 2024/05/28 13:19:33 by pin3dev          ###   ########.fr       */
+/*   Updated: 2024/05/29 19:48:04 by pin3dev          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ BitcoinDataBase::BitcoinDataBase()
         Checker::ckFormat(line, DB_SEPARATOR, false); //could throw exception
         this->DBdata.insert(Checker::makeValidPair());
     }
+    DBfile.close();
 }
 /**
  * Copy constructor

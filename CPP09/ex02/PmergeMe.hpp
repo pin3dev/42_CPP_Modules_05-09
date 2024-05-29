@@ -6,7 +6,7 @@
 /*   By: pin3dev <pinedev@outlook.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 15:02:37 by pin3dev           #+#    #+#             */
-/*   Updated: 2024/05/29 15:30:59 by pin3dev          ###   ########.fr       */
+/*   Updated: 2024/05/29 18:45:19 by pin3dev          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,12 +36,18 @@ class PmergeMe
 
 		void	_verifyArgs(int av, char **ac);
 		void	_fillContainers(int av, char **ac);
+		void 	_verifyDuplicate();
 
+		//vectors
 		void	_mergeTwoVEC(std::vector<int> &left, std::vector<int> &right, std::vector<int> &vector);
 		void	_mergeSortVEC(std::vector<int> &vector);
 		void	_binaryInsertVEC(std::vector<int>& main_chain, int b);
-		void 	_binaryInsertDEQ(std::deque<int>& main_chain, int b);
 		void  	_FordJohnsonVEC();
+
+		//list
+		void	_mergeTwoDEQ(std::deque<int> &left, std::deque<int> &right, std::deque<int> &deq);
+		void	_mergeSortDEQ(std::deque<int> &deq);
+		void	_binaryInsertDEQ(std::deque<int>& main_chain, int b);
 		void  	_FordJohnsonDEQ();
 
 	public:

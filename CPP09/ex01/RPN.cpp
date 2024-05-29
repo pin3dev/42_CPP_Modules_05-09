@@ -6,7 +6,7 @@
 /*   By: pin3dev <pinedev@outlook.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 15:01:45 by pin3dev           #+#    #+#             */
-/*   Updated: 2024/05/28 15:59:25 by pin3dev          ###   ########.fr       */
+/*   Updated: 2024/05/29 19:47:56 by pin3dev          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -155,8 +155,6 @@ double RPN::do_op(const char type, double fst, double sec)
         case '*':
             return fst * sec;
         case '/': 
-/*             if (sec == 0) 
-                throw std::runtime_error(std::string("Invalid operator: ") + type); */
             return fst / sec;
         default: 
             throw std::runtime_error(std::string("Invalid operator: ") + type + "\n");

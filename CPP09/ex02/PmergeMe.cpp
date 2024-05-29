@@ -6,7 +6,7 @@
 /*   By: pin3dev <pinedev@outlook.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 15:02:35 by pin3dev           #+#    #+#             */
-/*   Updated: 2024/05/29 16:00:47 by pin3dev          ###   ########.fr       */
+/*   Updated: 2024/05/29 18:50:32 by pin3dev          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,38 +28,11 @@ PmergeMe::PmergeMe(int ac, char **av)
 
 /** !SECTION 
  * ***********************
- * SECTION - CLASS UTILS 
+ * SECTION - SETTERS 
  * ***********************
 */
 
 void	PmergeMe::setLogger(Logger *log){this->_log = log;}
-
-/** !SECTION 
- * ***********************
- * SECTION - PUBLIC
- * ***********************
-*/
-
-void	PmergeMe::runMergeInsertion()
-{
-	printContainer(RED "Before: " RESET, this->_vec);
-
-	clock_t initVEC = clock();
-	_FordJohnsonVEC();
-	clock_t endVEC = clock();
-	
-	//clock_t initDEQ = clock();
-	//_FordJohnsonDEQ();
-	//clock_t endDEQ = clock();
-
-	printContainer(GREEN "After: " RESET, this->_vec);
-
-	double processVEC = static_cast<double>(endVEC - initVEC) * 1000 / CLOCKS_PER_SEC;
-	std::cout << "Time to process a range of " << _vec.size() << " elements with std::vector : " << processVEC << " s" << std::endl;
-	//double processDEQ = static_cast<double>(endDEQ - initDEQ) * 1000 / CLOCKS_PER_SEC;
-	//std::cout << "Time to process a range of " << _deq.size() << " elements with std::deque : " << processDEQ << " s" << std::endl;
-}
-
 
 /** !SECTION 
  * ***********************
@@ -94,6 +67,24 @@ void	PmergeMe::_fillContainers(int ac, char **av)
 		_vec.push_back(std::atoi(av[i]));
 		_deq.push_back(std::atoi(av[i]));
 	}
+	this->_verifyDuplicate();
+}
+
+void 	PmergeMe::_verifyDuplicate()
+{
+    std::vector<int> cur = this->_vec;
+	std::sort(cur.begin(), cur.end());
+
+    for (size_t i = 0; i < cur.size() - 1; i++)
+	{
+        if (cur[i] == cur[i + 1])
+		{
+			std::ostringstream oss;
+			oss << cur[i];
+			std::string str = oss.str();
+            throw std::invalid_argument("Error: Duplicated value '" + str + "' not allowed");
+        }
+    }
 }
 
 template <typename T>
@@ -108,6 +99,35 @@ void printContainer(std::string debug, T const &container)
 	}
 	std::cout << std::endl;
 }
+
+/** !SECTION 
+ * ***********************
+ * SECTION - PUBLIC
+ * ***********************
+*/
+
+void	PmergeMe::runMergeInsertion()
+{
+	printContainer(RED "Before: " RESET, this->_vec);
+
+	clock_t initVEC = clock();
+	_FordJohnsonVEC();
+	clock_t endVEC = clock();
+	
+	clock_t initDEQ = clock();
+	_FordJohnsonDEQ();
+	clock_t endDEQ = clock();
+
+	printContainer(GREEN "After: " RESET, this->_vec);
+
+	double processVEC = static_cast<double>(endVEC - initVEC) * 1000 / CLOCKS_PER_SEC;
+	std::cout << "Time to process a range of " << _vec.size() << " elements with std::vector : " << processVEC << " s" << std::endl;
+	double processDEQ = static_cast<double>(endDEQ - initDEQ) * 1000 / CLOCKS_PER_SEC;
+	std::cout << "Time to process a range of " << _deq.size() << " elements with std::deque : " << processDEQ << " s" << std::endl;
+}
+
+
+
 
 /** !SECTION 
  * ***********************
@@ -179,14 +199,15 @@ void PmergeMe::_binaryInsertVEC(std::vector<int>& main_chain, int b)
 {
     int left = 0;
     int right = main_chain.size();
+	
 	this->_log->printMsg("\n---------BINARY INSERTION---------\n");
 	std::ostringstream oss;
 	oss << "B: " << b << std::endl;
 	std::string msg = oss.str();
 	this->_log->printMsg(msg);
-
     this->_log->printArray(main_chain);
 	this->_log->printBinary(main_chain, left, right);
+
     while (left < right)
     {
         int mid = (left + right) / 2;
@@ -238,7 +259,6 @@ void PmergeMe::_FordJohnsonVEC()
     this->_log->printMsg("---------MAIN CHAIN DESORDENADO---------\n");
     this->_log->printArray(main_chain);  
 
-	//std::sort(main_chain.begin(), main_chain.end());
 	_mergeSortVEC(main_chain);
 
     this->_log->printMsg("---------MAIN CHAIN ORDENADO---------\n");
@@ -261,47 +281,102 @@ void PmergeMe::_FordJohnsonVEC()
  * ***********************
 */
 
-
-/* void PmergeMe::_binarySearchInsertDEQ(std::deque<int>& main_chain, int b)
+void	PmergeMe::_mergeTwoDEQ(std::deque<int> &left, std::deque<int> &right, std::deque<int> &deq)
 {
-    int left = 0;
+	size_t l = 0, r = 0, v = 0;
+	while(l < left.size() && r < right.size())
+	{
+		if(left[l] < right[r])
+		{
+			deq[v] = left[l];
+			v++;
+			l++;
+		}
+		else
+		{
+			deq[v] = right[r];
+			v++;
+			r++;
+		}
+	}
+	while(l < left.size())
+	{
+		deq[v] = left[l];
+		v++;
+		l++;
+	}
+	while(r < right.size())
+	{
+		deq[v] = right[r];
+		v++;
+		r++;
+	}
+}
+void	PmergeMe::_mergeSortDEQ(std::deque<int> &deq)
+{
+	if(deq.size() == 1)
+	return;
+
+	int	mid = deq.size() / 2;
+
+	std::deque<int> left = std::deque<int>(deq.begin(), deq.begin() + mid);
+	std::deque<int> right = std::deque<int>(deq.begin() + mid, deq.end());
+
+	_mergeSortDEQ(left);
+	_mergeSortDEQ(right);
+
+	_mergeTwoDEQ(left, right, deq);
+}
+void	PmergeMe::_binaryInsertDEQ(std::deque<int>& main_chain, int b)
+{
+	int left = 0;
     int right = main_chain.size();
+
     while (left < right)
     {
         int mid = (left + right) / 2;
         if (main_chain[mid] < b)
-            left = mid + 1;
-        else 
+        {
+		    left = mid + 1;
+		}
+        else
+		{
             right = mid;
+		}
     }
     main_chain.insert(main_chain.begin() + left, b);
 }
-
-void PmergeMe::_algorithmFordJohnsonDEQ()
+void  	PmergeMe::_FordJohnsonDEQ()
 {
-    std::deque<PmergeMe::intPair> pairs;
+	std::deque<PmergeMe::intPair> pairs;
     
 	int size = this->_deq.size();
-	
+
 	for (int i = 0; i < (size - 1); i += 2)
-        pairs.push_back(std::make_pair(std::min(this->_deq[i], this->_deq[i+1]), std::max(this->_deq[i], this->_deq[i+1])));
+        pairs.push_back(std::make_pair(this->_deq[i], this->_deq[i+1]));
     
     if (size % 2 != 0)
-        pairs.push_back(std::make_pair(this->_deq[size - 1], this->_deq[size - 1]));
+    {
+	    pairs.push_back(std::make_pair(this->_deq[size - 1], this->_deq[size - 1]));
+	}
 
-    std::sort(pairs.begin(), pairs.end());
+	
+	std::deque<int> main_chain;
+    
+	size = pairs.size();
+	for (int i = 0; i < size ; i++)
+    {
+		if (pairs[i].first == pairs[i].second)
+			break;
+	    main_chain.push_back(std::min(pairs[i].first, pairs[i].second));
+	}
 
-    std::deque<int> main_chain;
+	_mergeSortDEQ(main_chain);
+
     for (size_t i = 0; i < pairs.size(); ++i)
-        main_chain.push_back(pairs[i].first);
-
-    for (size_t i = 0; i < pairs.size(); ++i)
-        _binarySearchInsertDEQ(main_chain, pairs[i].second);
+    {
+	    _binaryInsertDEQ(main_chain, std::max(pairs[i].first, pairs[i].second));
+	}
 
     this->_deq = main_chain;
-} */
-
-
-
-
-
+}
