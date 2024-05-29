@@ -6,7 +6,7 @@
 #    By: pin3dev <pinedev@outlook.com>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/22 15:02:32 by pin3dev           #+#    #+#              #
-#    Updated: 2024/03/26 17:19:14 by pin3dev          ###   ########.fr        #
+#    Updated: 2024/05/29 00:52:34 by pin3dev          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ CPP = c++
 
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRC =  main.cpp PmergeMe.cpp
+SRC =  main.cpp PmergeMe.cpp Logger.cpp
 
 OBJ = $(SRC:.cpp=.o)
 

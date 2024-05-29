@@ -1,29 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   mColors.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pin3dev <pinedev@outlook.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/22 15:02:29 by pin3dev           #+#    #+#             */
-/*   Updated: 2024/05/29 01:12:26 by pin3dev          ###   ########.fr       */
+/*   Created: 2024/03/14 21:55:41 by pin3dev           #+#    #+#             */
+/*   Updated: 2024/05/29 00:43:31 by pin3dev          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "PmergeMe.hpp"
-#include "Logger.hpp"
+# ifndef MCOLORS_HPP
+# define MCOLORS_HPP
 
-//./PmergeMe $(jot -r 3000 1 100000 | tr '\n' ' ')
+/**
+ * @file mColors.hpp
+ * @brief definition of MACROS to color the output of the program and ENUMS to check the grade
+*/
 
-int	main(int ac, char **av)
-{
 
-	try
-	{
-		Logger log;
-		PmergeMe program(ac, av);
-		program.setLogger(&log);
-		program.runMergeInsertion();
-	}
-	catch(const std::exception& e){std::cerr << e.what() << '\n';}
-}
+#define RESET    "\x1b[0m"
+#define GREEN   "\x1b[32m"
+#define YELLOW  "\x1b[33m"
+#define RED    "\x1b[31m"
+#define GRAY  "\x1b[37m"
+#define MAGENTA "\x1b[35m"
+#define BKGRAY	"\x1b[47;90m"
+#define CYAN    "\x1b[36m"
+
+# endif
