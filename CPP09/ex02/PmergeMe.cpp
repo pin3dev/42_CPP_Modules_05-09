@@ -6,7 +6,7 @@
 /*   By: pin3dev <pinedev@outlook.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 15:02:35 by pin3dev           #+#    #+#             */
-/*   Updated: 2024/05/29 12:55:30 by pin3dev          ###   ########.fr       */
+/*   Updated: 2024/05/29 13:41:16 by pin3dev          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,54 @@ PmergeMe::PmergeMe(int ac, char **av)
 {
 	this->_verifyArgs(ac, av);
 	this->_fillContainers(ac, av);
+}
+
+void	mergeVec(std::vector<int> &left, std::vector<int> &right, std::vector<int> &vector)
+{
+	size_t l = 0, r = 0, v = 0;
+	while(l < left.size() && r < right.size())
+	{
+		if(left[l] < right[r])
+		{
+			vector[v] = left[l];
+			v++;
+			l++;
+		}
+		else
+		{
+			vector[v] = right[r];
+			v++;
+			r++;
+		}
+	}
+	while(l < left.size())
+	{
+		vector[v] = left[l];
+		v++;
+		l++;
+	}
+	while(r < right.size())
+	{
+		vector[v] = right[r];
+		v++;
+		r++;
+	}
+}
+
+
+void	mergeInsertVector(std::vector<int> &vector)
+{
+	if(vector.size() == 1)
+		return;
+
+	int	mid = vector.size() / 2;
+
+	std::vector<int> left = std::vector<int>(vector.begin(), vector.begin() + mid);
+	std::vector<int> right = std::vector<int>(vector.begin() + mid, vector.end());
+
+	mergeInsertVector(left);
+	mergeInsertVector(right);
+	mergeVec(left, right, vector);
 }
 
 void PmergeMe::_binarySearchInsertVEC(std::vector<int>& main_chain, int b)
@@ -85,7 +133,8 @@ void PmergeMe::_algorithmFordJohnsonVEC()
     this->_log->printMsg("---------MAIN CHAIN DESORDENADO---------\n");
     this->_log->printArray(main_chain);  
 
-	std::sort(main_chain.begin(), main_chain.end());
+	//std::sort(main_chain.begin(), main_chain.end());
+	mergeInsertVector(main_chain);
 
     this->_log->printMsg("---------MAIN CHAIN ORDENADO---------\n");
     this->_log->printArray(main_chain);
