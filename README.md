@@ -19,7 +19,9 @@ The `cpp_modules_05-09` projects revolves around mastering advanced C++ concepts
 - Standard Template Library (STL)
 - Containers (stack, list, vector, map, deque...)
 - Iterators  
-- Composition vs Inheritance  
+- Composition vs Inheritance
+- Reverse Polish Notation & Polish Notation
+- Merge-Insertion Sort Algorithm (The Ford-Johnson Sorting Algorithm)
   
 ## Guidelines
 
