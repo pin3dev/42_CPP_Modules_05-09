@@ -80,7 +80,7 @@ $>make
 |⭐⭐|`CPP06`       | 🇧🇷 | 📄 |[TIPOS DE LITERAIS EM C / C++](https://acervolima.com/tipos-de-literais-em-c-c-com-exemplos/)|  
 |🤩|`CPP06`         | 🇺🇸 | 📄 |[Literals In C++](https://www.geeksforgeeks.org/cpp-literals/)|  
 |🤩|`CPP06` `CPP09` | 🇺🇸 | 📄 |[Regex](https://www3.ntu.edu.sg/home/ehchua/programming/howto/Regexe.html)|  
-|🤩|`CPP08` `CPP09` | 🇺🇸🇮🇳💚 | 📹 |[C++ Standard Template Library  STL](https://www.youtube.com/watch?v=BKBXM7ypQG0&list=PL1w8k37X_6L9NXrP1D31hDTKcdAPIL0cG&index=1)  
+|🤩|`CPP08` `CPP09` | 🇺🇸 | 📹 |[C++ Standard Template Library  STL](https://www.youtube.com/watch?v=BKBXM7ypQG0&list=PL1w8k37X_6L9NXrP1D31hDTKcdAPIL0cG&index=1)  
 |⭐|`CPP09`         | 🇺🇸 | 📄 |[Polish Notation](https://en.wikipedia.org/wiki/Polish_notation)|  
 |⭐|`CPP09`         | 🇺🇸 | 📄 |[Reverse Polish Notation](https://en.wikipedia.org/wiki/Reverse_Polish_notation)|  
 |🤩|`CPP09`         | 🇺🇸 | 📹 |[Reverse Polish Notation](https://www.youtube.com/watch?v=qN8LPIcY6K4)|  
