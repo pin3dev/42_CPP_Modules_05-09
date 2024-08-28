@@ -15,7 +15,7 @@ This module is designed to help you understand Try/Catch and Exceptions in C++.
 - [Project Overview](#overview)
 - [Mandatory Features](#features)
 - [Project Compilation and Execution](#compilation-and-execution)
-- [Tests -  Usage Examples](#usage-examples)
+- [Tests](#Tests)
 
 ## Overview
 The `cpp_module_05` project revolves around the concepts of try/catch in C++.
@@ -59,7 +59,7 @@ $>make
 ./Intern
 ```
 
-## Usage Examples
+## Tests
 to be implemented...  
 <!--
 ```c
