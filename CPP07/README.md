@@ -2,7 +2,7 @@
 
 ## Table of Contents
 - [Project Overview](#overview)
-- [Mandatory and Bonus Features](#features)
+- [Mandatory Features](#features)
 - [Project Compilation and Execution](#compilation-and-execution)
 - [Tests](#Tests)
 
