@@ -56,14 +56,17 @@ Follow the `Orthodox Canonical Form` for classes `Modules 02-09`, which must imp
 
 ## Features
 
-### [Module 05](https://github.com/pin3dev/42_CPP_Modules_05-09/tree/main/CPP05): Exception Handling and Object-Oriented Design
-
+### [Module 05](https://github.com/pin3dev/42_CPP_Modules_05-09/tree/main/CPP05): Exception Handling, Custom Exceptions, Error Propagation
+### [Module 06](https://github.com/pin3dev/42_CPP_Modules_05-09/tree/main/CPP06): Casting Operators, Type Conversion, Literals Values
+### [Module 07](https://github.com/pin3dev/42_CPP_Modules_05-09/tree/main/CPP07): Template Functions, Templates Classes, Iterators
+### [Module 08](https://github.com/pin3dev/42_CPP_Modules_05-09/tree/main/CPP08): STL, Containers, Algorithmic Efficiency
+### [Module 09](https://github.com/pin3dev/42_CPP_Modules_05-09/tree/main/CPP09): RPN, Merge-Insertion Sort Algorithm, Advanced STL, Performance Optimization
 
 ## Execution
 Each exercise's compilation is done separately by running the Makefile within the exercise's folder.  
 ```bash
 #in the ex00, ex01, ex02 or ex03 directory
-$>make
+make
 
 ``` 
 
