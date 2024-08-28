@@ -1,15 +1,5 @@
-# CPP-Module-05 `100/100`
+# CPP05-Module `100/100`
 This module is designed to help you understand Try/Catch and Exceptions in C++.
-
-<!--
-<p align="center">
-  <img src="https://github.com/pin3dev/42_Push_Swap/blob/d3573e4aa7ad62d9e6d1ee2acf2e6da3dbe860b1/%3CTutorial%3EPushSwap/pushswap_vs.gif" width="600" height="375" />
-</p>
-
-<p align="center">
-  <a href="https://github.com/pin3dev/42_Push_Swap/wiki">🎰---TUTORIAL---🎰</a>
-</p> --->
-
 
 ## Table of Contents
 - [Project Overview](#overview)
